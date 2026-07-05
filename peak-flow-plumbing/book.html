@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a plumber — Peak Flow Plumbing &amp; Drain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#F9FAFB;font-family:Inter,system-ui,sans-serif;color:#1B2A4A}
+  a{color:inherit;text-decoration:none}
+  @keyframes pf-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  .pf-btn:hover{filter:brightness(1.06)}
+  .pf-chip{background:#eef1f6;color:#1B2A4A;font:600 13px Inter;padding:10px 15px;border-radius:10px;cursor:pointer;transition:.2s}
+  .pf-chip.on{background:#F59E0B;color:#1B2A4A;font-weight:700}
+  .pf-card{border:2px solid #eef0f4;background:#F9FAFB;border-radius:12px;padding:14px;cursor:pointer;transition:.2s}
+  .pf-card.on{border-color:#F59E0B;background:#fff8ec}
+  @media(max-width:820px){.pf-navlinks{display:none!important}.pf-book{grid-template-columns:1fr!important}.pf-sum{position:static!important}.pf-urg{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div style="position:sticky;top:0;z-index:50;background:rgba(27,42,74,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1180px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px"><div style="width:30px;height:30px;border-radius:8px;background:#F59E0B;display:flex;align-items:center;justify-content:center;font:800 15px Inter;color:#1B2A4A">P</div><span style="font:800 16px Inter;color:#fff;letter-spacing:-.02em">Peak Flow</span></a>
+    <div class="pf-navlinks" style="display:flex;align-items:center;gap:26px;font:600 13px Inter;color:rgba(255,255,255,.72)">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="emergency.html">Emergency</a><a href="book.html" style="color:#F59E0B">Book</a>
+    </div>
+    <a href="tel:5418034477" class="pf-btn" style="background:#F59E0B;color:#1B2A4A;font:700 13px Inter;padding:9px 16px;border-radius:9px">(541) 803-4477</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div style="background:radial-gradient(120% 100% at 80% -20%,#26426f 0%,#1B2A4A 60%)">
+  <div style="max-width:1180px;margin:0 auto;padding:46px 26px 42px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font:600 11px Inter;color:#a7f3c0"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pf-pulse 2s infinite"></span>NOW BOOKING · SAME-DAY OFTEN AVAILABLE</div>
+    <h1 style="font-family:'Space Grotesk';font-weight:700;color:#fff;font-size:44px;line-height:1.03;letter-spacing:-.03em;margin:14px 0 0">Book a plumber</h1>
+    <p style="font:400 15px/1.55 Inter;color:rgba(255,255,255,.7);margin:12px 0 0;max-width:520px">A few quick details and we'll confirm your visit. Prefer to talk? Call <a href="tel:5418034477" style="color:#F59E0B;font-weight:700">(541) 803-4477</a>.</p>
+  </div>
+</div>
+
+<!-- BOOK GRID -->
+<div class="pf-book" style="max-width:1180px;margin:0 auto;padding:40px 26px 64px;display:grid;grid-template-columns:1.55fr 1fr;gap:32px;align-items:start">
+
+  <!-- form -->
+  <form id="bookForm" style="display:flex;flex-direction:column;gap:26px" onsubmit="return false">
+    <!-- service -->
+    <div style="background:#fff;border:1px solid #eef0f4;border-radius:18px;padding:24px">
+      <div style="font:700 12px ui-monospace,monospace;color:#F59E0B">01 · SERVICE</div>
+      <h3 style="font:700 18px Inter;margin:8px 0 14px">What do you need?</h3>
+      <div id="services" style="display:flex;flex-wrap:wrap;gap:9px">
+        <span class="pf-chip on" data-service="Clogged drain">Clogged drain</span>
+        <span class="pf-chip" data-service="Water heater">Water heater</span>
+        <span class="pf-chip" data-service="Leak repair">Leak repair</span>
+        <span class="pf-chip" data-service="Repiping">Repiping</span>
+        <span class="pf-chip" data-service="Fixtures / toilet">Fixtures / toilet</span>
+        <span class="pf-chip" data-service="Other">Other</span>
+      </div>
+    </div>
+    <!-- urgency -->
+    <div style="background:#fff;border:1px solid #eef0f4;border-radius:18px;padding:24px">
+      <div style="font:700 12px ui-monospace,monospace;color:#F59E0B">02 · TIMING</div>
+      <h3 style="font:700 18px Inter;margin:8px 0 14px">How soon?</h3>
+      <div id="urgency" class="pf-urg" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <div class="pf-card" data-urgency="Emergency"><div style="font:700 14px Inter">Emergency</div><div style="font:500 11px Inter;color:#8a93a5;margin-top:3px">Right now</div></div>
+        <div class="pf-card on" data-urgency="Same-day"><div style="font:700 14px Inter">Same-day</div><div style="font:500 11px Inter;color:#8a93a5;margin-top:3px">Today if we can</div></div>
+        <div class="pf-card" data-urgency="Schedule"><div style="font:700 14px Inter">Schedule</div><div style="font:500 11px Inter;color:#8a93a5;margin-top:3px">Pick a day</div></div>
+      </div>
+    </div>
+    <!-- details -->
+    <div style="background:#fff;border:1px solid #eef0f4;border-radius:18px;padding:24px">
+      <div style="font:700 12px ui-monospace,monospace;color:#F59E0B">03 · YOUR INFO</div>
+      <h3 style="font:700 18px Inter;margin:8px 0 14px">Where &amp; how to reach you</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div><label style="font:600 11px Inter;color:#6b7385">Full name</label><input type="text" style="width:100%;height:44px;border:1px solid #e2e6ee;border-radius:10px;margin-top:6px;background:#F9FAFB;padding:0 12px;font:500 14px Inter;color:#1B2A4A;outline:none"></div>
+        <div><label style="font:600 11px Inter;color:#6b7385">Phone</label><input type="tel" style="width:100%;height:44px;border:1px solid #e2e6ee;border-radius:10px;margin-top:6px;background:#F9FAFB;padding:0 12px;font:500 14px Inter;color:#1B2A4A;outline:none"></div>
+      </div>
+      <div style="margin-top:14px"><label style="font:600 11px Inter;color:#6b7385">Service address (Bend area)</label><input type="text" style="width:100%;height:44px;border:1px solid #e2e6ee;border-radius:10px;margin-top:6px;background:#F9FAFB;padding:0 12px;font:500 14px Inter;color:#1B2A4A;outline:none"></div>
+      <div style="margin-top:14px"><label style="font:600 11px Inter;color:#6b7385">Anything we should know?</label><textarea style="width:100%;height:84px;border:1px solid #e2e6ee;border-radius:10px;margin-top:6px;background:#F9FAFB;padding:10px 12px;font:500 14px Inter;color:#1B2A4A;outline:none;resize:vertical"></textarea></div>
+    </div>
+  </form>
+
+  <!-- summary sidebar -->
+  <div class="pf-sum" style="position:sticky;top:88px;background:#1B2A4A;border-radius:20px;padding:26px;color:#fff">
+    <div style="font:600 11px Inter;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.12em">Your request</div>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1)"><span style="font:500 13px Inter;color:rgba(255,255,255,.6)">Service</span><span id="sumService" style="font:700 13px Inter;color:#F59E0B;text-align:right">Clogged drain</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1)"><span style="font:500 13px Inter;color:rgba(255,255,255,.6)">Timing</span><span id="sumTiming" style="font:700 13px Inter;color:#F59E0B;text-align:right">Same-day</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px"><span style="font:500 13px Inter;color:rgba(255,255,255,.6)">Location</span><span style="font:700 13px Inter;text-align:right">Bend, OR</span></div>
+    </div>
+    <button type="button" id="submitBtn" class="pf-btn" style="width:100%;border:none;margin-top:22px;background:#F59E0B;color:#1B2A4A;font:800 15px Inter;text-align:center;padding:14px;border-radius:11px;cursor:pointer">Request this visit →</button>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:9px;font:500 12px Inter;color:rgba(255,255,255,.62)">
+      <span>✓ Upfront flat-rate quote</span><span>✓ Licensed &amp; insured · #PB12847</span><span>✓ No charge to ask</span>
+    </div>
+    <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font:500 12px Inter;color:rgba(255,255,255,.6)">Emergency right now? <a href="emergency.html" style="color:#F59E0B;font-weight:700">Call the 24/7 line →</a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#14213b;color:rgba(255,255,255,.55)"><div style="max-width:1180px;margin:0 auto;padding:34px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px"><div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:8px;background:#F59E0B;display:flex;align-items:center;justify-content:center;font:800 14px Inter;color:#1B2A4A">P</div><div><div style="font:800 14px Inter;color:#fff">Peak Flow Plumbing &amp; Drain</div><div style="font:500 11px Inter">Bend, OR 97701 · OR License #PB12847</div></div></div><div style="font:500 11px Inter">© 2026 Peak Flow Plumbing · Built by <a href="https://demovantagepointweb.us" style="color:#F59E0B">Vantage Point Web</a></div></div></div>
+
+<script>
+  (function(){
+    var svc = document.getElementById('services');
+    var urg = document.getElementById('urgency');
+    var sumS = document.getElementById('sumService');
+    var sumT = document.getElementById('sumTiming');
+    svc.addEventListener('click', function(e){
+      var chip = e.target.closest('.pf-chip'); if(!chip) return;
+      svc.querySelectorAll('.pf-chip').forEach(function(c){c.classList.remove('on');});
+      chip.classList.add('on');
+      sumS.textContent = chip.getAttribute('data-service');
+    });
+    urg.addEventListener('click', function(e){
+      var card = e.target.closest('.pf-card'); if(!card) return;
+      urg.querySelectorAll('.pf-card').forEach(function(c){c.classList.remove('on');});
+      card.classList.add('on');
+      sumT.textContent = card.getAttribute('data-urgency');
+    });
+    document.getElementById('submitBtn').addEventListener('click', function(){
+      alert('Thanks! This is a demo form. Wire it to your booking/email backend to go live.\n\nService: ' + sumS.textContent + '\nTiming: ' + sumT.textContent);
+    });
+  })();
+</script>
+</body>
+</html>
