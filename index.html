@@ -394,3 +394,11 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
+
+<script>
+// Remove "See what we do" button from hero
+document.querySelectorAll('a[href="#services"]').forEach(function(a){
+  if(a.textContent.trim()==='See what we do') a.remove();
+});
+</script>
