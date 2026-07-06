@@ -1,6 +1,12 @@
 {
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" }
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/demos/restaurant", "destination": "/demos/restaurant.html" },
+    { "source": "/demos/plumber", "destination": "/demos/plumber.html" },
+    { "source": "/demos/landscaper", "destination": "/demos/landscaper.html" },
+    { "source": "/demos/hvac", "destination": "/demos/hvac.html" },
+    { "source": "/demos/hair-salon", "destination": "/demos/hair-salon.html" },
+    { "source": "/demos/auto-repair", "destination": "/demos/auto-repair.html" }
   ]
 }
