@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   }
   try {
     const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
-    const response = await fetch('http://152.70.137.246:5678/webhook/docuseal-completed', {
+    const response = await fetch('https://n8n.timloseewinstonai.xyz/webhook/docuseal-completed', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: body
