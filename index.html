@@ -338,7 +338,7 @@
     </a>
     <div style="font-size:13.5px;color:#7C86AB">© 2026 Vantage Point Web Design, a DBA of Losee Productions LLC. All rights reserved.</div>
     <div style="display:flex;gap:22px;font-size:13.5px;color:#A6AECB">
-      <a href="#services">Services</a><a href="#book">Contact</a><a href="#top">Top ↑</a>
+      <a href="#services">Services</a><a href="#book">Contact</a><a href="/onboarding/">Client Setup</a><a href="#top">Top ↑</a>
     </div>
   </div>
 </footer>
@@ -446,6 +446,27 @@ window.addEventListener('load', () => {
 <script>
 // Remove "See what we do" button from hero
 document.querySelectorAll('a[href="#services"]').forEach(function(a){ if(a.textContent.trim()==='See what we do') { a.href='#demos'; a.textContent='See demos'; } });
+</script>
+<script>
+// Smooth-scroll in-page section links WITHOUT leaving a #hash in the URL
+(function(){
+  function headerOffset(){
+    var h = document.querySelector('header, nav');
+    if(h){ var cs=getComputedStyle(h); if(cs.position==='fixed'||cs.position==='sticky') return h.offsetHeight; }
+    return 0;
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      var el = (id==='' || id==='top') ? document.body : document.getElementById(id);
+      if(!el) return; // unknown target: leave default behavior
+      e.preventDefault();
+      var top = (id==='' || id==='top') ? 0 : (el.getBoundingClientRect().top + window.pageYOffset - headerOffset() - 12);
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      history.replaceState(null, '', location.pathname + location.search);
+    });
+  });
+})();
 </script>
 
 

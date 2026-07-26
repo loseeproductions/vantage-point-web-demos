@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Onboarding — Vantage Point Web Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05081A; --ink:#EAEEFC; --muted:#A6AECB; --faint:#98A0C0;
+    --blue:#3D6EFF; --blue2:#5B86FF; --cyan:#7BE0FF; --amber:#FFB020;
+    --line:rgba(255,255,255,.09); --glass:rgba(255,255,255,.04); --glass2:rgba(255,255,255,.06);
+    --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --grad:linear-gradient(110deg,#5B86FF,#7BE0FF 55%,#FFB020);
+    --grad-blue:linear-gradient(140deg,#3D6EFF,#5B86FF);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.62;font-size:16px;position:relative;overflow-x:hidden;}
+  .orb{position:fixed;border-radius:50%;filter:blur(75px);z-index:0;pointer-events:none;}
+  .orb.a{width:560px;height:560px;background:radial-gradient(circle at 32% 32%,var(--blue),transparent 70%);opacity:.5;top:-170px;left:-140px;animation:floatOrb 14s ease-in-out infinite;}
+  .orb.b{width:500px;height:500px;background:radial-gradient(circle at 60% 40%,var(--cyan),transparent 68%);opacity:.32;top:120px;right:-180px;animation:floatOrb2 17s ease-in-out infinite;}
+  .orb.c{width:420px;height:420px;background:radial-gradient(circle at 50% 50%,var(--amber),transparent 70%);opacity:.20;bottom:-150px;left:24%;animation:floatOrb 21s ease-in-out infinite;}
+  @keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(42px,32px)}}
+  @keyframes floatOrb2{0%,100%{transform:translate(0,0)}50%{transform:translate(-38px,26px)}}
+  @media (prefers-reduced-motion:reduce){.orb{animation:none!important;}}
+  .wrap{max-width:860px;margin:0 auto;padding:44px 22px 72px;position:relative;z-index:1;}
+  .brandrow{display:flex;align-items:center;gap:13px;margin-bottom:38px;}
+  .logo{width:44px;height:44px;border-radius:12px;background:var(--grad-blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:19px;letter-spacing:-1px;flex:none;box-shadow:0 6px 22px rgba(61,110,255,.4);}
+  .brandname{font-weight:700;font-size:15.5px;}
+  .brandname small{display:block;font-family:var(--mono);font-weight:500;color:var(--faint);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+  .eyebrow{font-family:var(--mono);color:var(--cyan);font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin:0 0 14px;}
+  h1{font-size:44px;line-height:1.1;margin:0 0 18px;letter-spacing:-1.2px;font-weight:800;}
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{color:var(--muted);font-size:18px;max-width:660px;margin:0 0 8px;}
+
+  .promise{margin-top:30px;background:var(--glass);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:16px;padding:18px 22px;backdrop-filter:blur(6px);}
+  .promise p{margin:0;color:var(--muted);font-size:15px;} .promise strong{color:var(--ink);}
+
+  .sect{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin:40px 0 16px;font-weight:600;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media (max-width:640px){.grid{grid-template-columns:1fr;} h1{font-size:34px;}}
+  .card{display:flex;flex-direction:column;text-decoration:none;background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px;backdrop-filter:blur(6px);transition:transform .15s ease,border-color .15s ease,background .15s ease;color:inherit;position:relative;overflow:hidden;}
+  .card:hover{transform:translateY(-3px);border-color:rgba(123,224,255,.4);background:var(--glass2);}
+  .card .ic{width:48px;height:48px;border-radius:12px;background:var(--glass2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+  .card .k{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--faint);margin-bottom:6px;}
+  .card h3{margin:0 0 7px;font-size:20px;font-weight:700;letter-spacing:-.3px;}
+  .card p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.5;flex:1;}
+  .card .go{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--cyan);}
+  .card .go .time{margin-left:auto;font-family:var(--mono);font-weight:500;font-size:12px;color:var(--faint);}
+  .card .row{display:flex;align-items:center;width:100%;}
+  .arrow{transition:transform .15s ease;} .card:hover .arrow{transform:translateX(4px);}
+
+  .help{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:linear-gradient(150deg,rgba(61,110,255,.16),rgba(123,224,255,.06));border:1px solid rgba(123,224,255,.3);border-radius:18px;padding:20px 24px;backdrop-filter:blur(8px);}
+  .help .t{font-size:15px;color:var(--muted);} .help .t b{color:var(--ink);}
+  .help a{text-decoration:none;background:var(--grad-blue);color:#fff;font-weight:700;font-size:14px;padding:11px 18px;border-radius:11px;box-shadow:0 6px 20px rgba(61,110,255,.35);white-space:nowrap;}
+
+  footer{margin-top:38px;color:var(--faint);font-size:12.5px;text-align:center;font-family:var(--mono);letter-spacing:.5px;}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+
+<div class="wrap">
+  <div class="brandrow"><div class="logo">VP</div><div class="brandname">Vantage Point Web Design<small>Client Setup Guide</small></div></div>
+
+  <p class="eyebrow">Welcome Aboard</p>
+  <h1>Let's get your business <span class="g">set up</span></h1>
+  <p class="lede">A few quick accounts power your new website — payments, bookings, your Google listing, and email. These short guides walk you through each one, step by step. Do them in any order.</p>
+
+  <div class="promise">
+    <p><strong>Here's how it works:</strong> you create each account (they're tied to your business, so they have to be yours), then simply <strong>add us as a helper</strong> — and we handle all the technical setup from there. <strong>You'll never need to share a password with us.</strong></p>
+  </div>
+
+  <p class="sect">Your setup guides</p>
+  <div class="grid">
+
+    <a class="card" href="stripe.html">
+      <div class="ic">💳</div>
+      <div class="k">Payments</div>
+      <h3>Stripe</h3>
+      <p>Let your website take credit card payments, deposited straight to your bank.</p>
+      <div class="row"><span class="go">Open guide <span class="arrow">→</span></span><span class="time">~15 min</span></div>
+    </a>
+
+    <a class="card" href="calendly.html">
+      <div class="ic">📅</div>
+      <div class="k">Bookings</div>
+      <h3>Calendly</h3>
+      <p>Let customers book appointments online — straight onto your calendar.</p>
+      <div class="row"><span class="go">Open guide <span class="arrow">→</span></span><span class="time">~10 min</span></div>
+    </a>
+
+    <a class="card" href="google-business-profile.html">
+      <div class="ic">📍</div>
+      <div class="k">Local Search</div>
+      <h3>Google Business Profile</h3>
+      <p>Show up on Google Search &amp; Maps with reviews, hours, and a call button.</p>
+      <div class="row"><span class="go">Open guide <span class="arrow">→</span></span><span class="time">~15 min</span></div>
+    </a>
+
+    <a class="card" href="email.html">
+      <div class="ic">✉️</div>
+      <div class="k">Professional Inbox</div>
+      <h3>Email</h3>
+      <p>Get a branded inbox at your domain — you@yourbusiness.com. Three easy options.</p>
+      <div class="row"><span class="go">Open guide <span class="arrow">→</span></span><span class="time">~10 min</span></div>
+    </a>
+
+  </div>
+
+  <div class="help">
+    <div class="t"><b>Not sure where to start?</b> We're happy to hop on a quick call and set things up together.</div>
+    <a href="mailto:tim@vantagepointwebdesign.us">Email us</a>
+  </div>
+
+  <footer>Vantage Point Web Design · Get Your Business Found Online</footer>
+</div>
+</body>
+</html>
