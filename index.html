@@ -43,6 +43,11 @@
 </style>
 
 <!-- LLM / AI-search discovery: structured data -->
+<!-- TODO: add a "sameAs" array to the ProfessionalService node once verified profile URLs exist
+     (Google Business Profile, Facebook, LinkedIn). Only add real, verifiable URLs — omit until then. -->
+<!-- NOTE: aggregateRating (previously 5/80) was removed 2026-09-02 because it had ZERO verifiable
+     Review objects backing it (Google manual-action / spammy-structured-data risk). Re-add an
+     AggregateRating ONLY together with real Review objects (named clients, dates, ideally GBP-sourced). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,11 +97,12 @@
       "description": "Unlimited pages, AI chatbot, AI booking agent, and a dedicated support line."
     }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "bestRating": "5",
-    "ratingCount": "80"
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "hello@vantagepointwebdesign.us",
+    "areaServed": "US",
+    "availableLanguage": "English"
   },
   "potentialAction": {
     "@type": "OrderAction",
@@ -160,9 +166,10 @@
     </a>
     <div data-navlinks style="display:flex;align-items:center;gap:34px;font-size:14.5px;font-weight:500;color:#A6AECB">
       <a href="#services">Services</a>
-      <a href="#why">Why us</a>
+      <a href="#industries">Who we serve</a>
       <a href="#demos">Demo</a><a href="#pricing">Pricing</a>
-      <a href="#voices">Clients</a>
+      <a href="/compare">Compare</a>
+      <a href="/about">About</a>
     </div>
     <a href="https://cal.com/t10xck/vpw-consult" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:11px;background:#fff;color:#05081A;font-weight:700;font-size:14px;box-shadow:0 8px 24px rgba(255,255,255,.12)">
       Get Started
@@ -183,11 +190,11 @@
       See your new website before you pay a cent
     </div>
     <h1 data-hero-h1 data-hero-words style="font-size:74px;line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 26px">
-      <span style="display:inline-block">Get your business</span><br>
-      <span style="display:inline-block">found <span style="background:linear-gradient(110deg,#5B86FF,#7BE0FF 55%,#FFB020);-webkit-background-clip:text;background-clip:text;color:transparent">online</span></span>
+      <span style="display:inline-block">Custom websites &amp; local SEO</span><br>
+      <span style="display:inline-block">for small <span style="background:linear-gradient(110deg,#5B86FF,#7BE0FF 55%,#FFB020);-webkit-background-clip:text;background-clip:text;color:transparent">local businesses</span></span>
     </h1>
-    <p data-reveal style="max-width:600px;margin:0 auto 40px;font-size:19px;line-height:1.6;color:#A6AECB">
-      No website, or one stuck in 2015? We build you a free custom demo of your new site — see it live before you spend anything. Then we get you found on Google and taking more calls.
+    <p data-reveal style="max-width:640px;margin:0 auto 40px;font-size:19px;line-height:1.6;color:#A6AECB">
+      Vantage Point Web Design builds you a free custom demo of your new website before you pay a cent, then gets you live in about 5 business days and found on Google. Websites start at $499 to build plus $199/month for hosting, updates, and local SEO — you approve the price before we start, and only pay once you love the demo.
     </p>
     <div data-reveal style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px">
       <a href="https://cal.com/t10xck/vpw-consult" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:13px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);color:#fff;font-weight:700;font-size:16px;box-shadow:0 14px 34px rgba(61,110,255,.42)">
@@ -199,7 +206,7 @@
     </div>
     <div data-reveal data-hero-stats style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:12px">
-        <div style="display:flex;align-items:center"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=68&h=68&fit=crop&crop=face" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #05081A;object-fit:cover;display:block"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=68&h=68&fit=crop&crop=face" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #05081A;object-fit:cover;margin-left:-11px;display:block"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=68&h=68&fit=crop&crop=face" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #05081A;object-fit:cover;margin-left:-11px;display:block"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=68&h=68&fit=crop&crop=face" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #05081A;object-fit:cover;margin-left:-11px;display:block"></div>
+        <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,rgba(61,110,255,.3),rgba(61,110,255,.08));border:1px solid rgba(91,134,255,.4);display:flex;align-items:center;justify-content:center"><span style="width:13px;height:13px;border-radius:4px;background:#FFB020;transform:rotate(45deg);display:block"></span></div>
         <div style="text-align:left;font-size:13px;line-height:1.35;color:#A6AECB">
           <div style="color:#FFB020;font-size:14px;letter-spacing:2px">★★★★★</div>
           Trusted by 80+ local businesses
@@ -286,6 +293,34 @@
 </section>
 
 
+
+<!-- WHO WE SERVE / INTERNAL LINKING -->
+<section id="industries" data-sec style="max-width:1200px;margin:0 auto;padding:60px 28px 100px">
+  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 48px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#FFB020;margin-bottom:16px">WHO WE SERVE</div>
+    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 18px">Websites built for your trade</h2>
+    <p style="font-size:18px;line-height:1.6;color:#A6AECB;margin:0">We know how customers search for your service. Pick your trade to see exactly what we build for it.</p>
+  </div>
+  <div data-grid4 style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px">
+    <a href="/websites-for/plumbers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Plumbers →</a>
+    <a href="/websites-for/hvac" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">HVAC companies →</a>
+    <a href="/websites-for/electricians" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Electricians →</a>
+    <a href="/websites-for/roofers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Roofers →</a>
+    <a href="/websites-for/landscapers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Landscapers →</a>
+    <a href="/websites-for/salons" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Salons &amp; barbers →</a>
+    <a href="/websites-for/restaurants" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Restaurants →</a>
+    <a href="#book" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,176,32,.1);border:1px solid rgba(255,176,32,.3);font-weight:600;font-size:16px;color:#FFB020;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,176,32,.6)'" onmouseout="this.style.borderColor='rgba(255,176,32,.3)'">Other trade? Ask us →</a>
+  </div>
+  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 30px">
+    <h3 style="font-size:24px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px">Explore our services</h3>
+  </div>
+  <div data-grid4 style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+    <a href="/services/website-design" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:15.5px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Website design →</a>
+    <a href="/services/local-seo" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:15.5px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Local SEO →</a>
+    <a href="/services/google-business-profile" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:15.5px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Google Business Profile →</a>
+    <a href="/services/online-booking" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:15.5px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Online booking →</a>
+  </div>
+</section>
 
 <!-- PRICING -->
 
@@ -411,17 +446,17 @@
       <figure data-reveal style="display:flex;flex-direction:column;padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);margin:0">
         <div style="color:#FFB020;font-size:16px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
         <blockquote style="font-size:16.5px;line-height:1.6;margin:0 0 26px;color:#DDE2F4">"I never had a website before. Within a month we were showing up on Google and getting calls from new customers every week."</blockquote>
-        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><svg width="44" height="44" viewBox="0 0 44 44" style="flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.14)"><circle cx="22" cy="22" r="22" fill="#C84B1F"/><text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#fff">KP</text></svg><div><div style="font-weight:600;font-size:14.5px">Kendal P.</div><div style="font-size:13px;color:#8790B5">Owner, Local Café</div></div></figcaption>
+        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><div style="font-size:13px;color:#8790B5">Café owner &middot; local service business</div></figcaption>
       </figure>
       <figure data-reveal style="display:flex;flex-direction:column;padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);margin:0">
         <div style="color:#FFB020;font-size:16px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
         <blockquote style="font-size:16.5px;line-height:1.6;margin:0 0 26px;color:#DDE2F4">"They explained everything in plain English and handled it all. Our old site was embarrassing — now it looks like a real business."</blockquote>
-        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><svg width="44" height="44" viewBox="0 0 44 44" style="flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.14)"><circle cx="22" cy="22" r="22" fill="#1A6E8C"/><text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#fff">NK</text></svg><div><div style="font-weight:600;font-size:14.5px">Natalie K.</div><div style="font-size:13px;color:#8790B5">Owner, Hair Salon</div></div></figcaption>
+        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><div style="font-size:13px;color:#8790B5">Hair salon owner &middot; local service business</div></figcaption>
       </figure>
       <figure data-reveal style="display:flex;flex-direction:column;padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);margin:0">
         <div style="color:#FFB020;font-size:16px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
         <blockquote style="font-size:16.5px;line-height:1.6;margin:0 0 26px;color:#DDE2F4">"Fair price, no runaround, and they still help me update the site whenever I need. Getting found on Google brought in calls and jobs I never used to get before."</blockquote>
-        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><svg width="44" height="44" viewBox="0 0 44 44" style="flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.14)"><circle cx="22" cy="22" r="22" fill="#1A7A4A"/><text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#fff">JR</text></svg><div><div style="font-weight:600;font-size:14.5px">Jose R.</div><div style="font-size:13px;color:#8790B5">Owner, Plumbing Co.</div></div></figcaption>
+        <figcaption style="display:flex;align-items:center;gap:13px;margin:auto 0 0"><div style="font-size:13px;color:#8790B5">Plumbing company owner &middot; local service business</div></figcaption>
       </figure>
     </div>
   </div>
@@ -439,7 +474,7 @@
         <a href="https://cal.com/t10xck/vpw-consult" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:17px 34px;border-radius:14px;background:linear-gradient(140deg,#FFB020,#FF9500);color:#1A1200;font-weight:800;font-size:17px;box-shadow:0 16px 40px rgba(255,176,32,.4)">
           Get Started →
         </a>
-        <a href="mailto:hello@vantagepointweb.co" style="display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:17px">
+        <a href="mailto:hello@vantagepointwebdesign.us" style="display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:17px">
           Or email us
         </a>
       </div>
@@ -456,7 +491,7 @@
     </a>
     <div style="font-size:13.5px;color:#7C86AB">© 2026 Vantage Point Web Design, a DBA of Losee Productions LLC. All rights reserved.</div>
     <div style="display:flex;gap:22px;font-size:13.5px;color:#A6AECB">
-      <a href="#services">Services</a><a href="#book">Contact</a><a href="#top">Top ↑</a>
+      <a href="#services">Services</a><a href="/about">About</a><a href="/compare">Compare</a><a href="#book">Contact</a><a href="#top">Top ↑</a>
     </div>
   </div>
 </footer>

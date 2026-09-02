@@ -40,10 +40,32 @@ Small and local service businesses that need a professional web presence but don
 - **Can customers book appointments on my site?** Yes, on the Pro and Growth plans.
 - **What if I need changes later?** Email us; we handle updates for you.
 
+## Pages
+
+Service pages (what we do):
+- Custom website design — https://vantagepointwebdesign.us/services/website-design
+- Local SEO — https://vantagepointwebdesign.us/services/local-seo
+- Google Business Profile setup — https://vantagepointwebdesign.us/services/google-business-profile
+- Online booking & quote requests — https://vantagepointwebdesign.us/services/online-booking
+
+Industry pages (who we build for):
+- Plumbers — https://vantagepointwebdesign.us/websites-for/plumbers
+- HVAC companies — https://vantagepointwebdesign.us/websites-for/hvac
+- Electricians — https://vantagepointwebdesign.us/websites-for/electricians
+- Roofers — https://vantagepointwebdesign.us/websites-for/roofers
+- Landscapers — https://vantagepointwebdesign.us/websites-for/landscapers
+- Salons & barbers — https://vantagepointwebdesign.us/websites-for/salons
+- Restaurants — https://vantagepointwebdesign.us/websites-for/restaurants
+
+Other pages:
+- About — https://vantagepointwebdesign.us/about
+- Compare (vs. DIY builders & agencies) — https://vantagepointwebdesign.us/compare
+
 ## Contact
 
 - Website: https://vantagepointwebdesign.us
 - Get a free custom demo: https://vantagepointwebdesign.us
+- Sales email: hello@vantagepointwebdesign.us
 - Service area: United States (remote — we build and support your site online).
 
 ## Canonical facts (safe to quote)
