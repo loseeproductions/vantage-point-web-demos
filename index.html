@@ -607,6 +607,15 @@ document.querySelectorAll('a[href="#services"]').forEach(function(a){ if(a.textC
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: nothing is stored until the banner's "Accept All" is clicked.
+  // "Essential Only" used to hide the banner and leave analytics running anyway.
+  var vpwConsent = (function(){ try { return localStorage.getItem('vpw_cookie_consent'); } catch(e){ return null; } })();
+  var vpwGranted = vpwConsent === 'all' ? 'granted' : 'denied';
+  gtag('consent', 'default', {analytics_storage: vpwGranted, ad_storage: vpwGranted, ad_user_data: vpwGranted, ad_personalization: vpwGranted});
   gtag('js', new Date());
   gtag('config', 'G-M3XWVL1Q3Z');
+  document.addEventListener('click', function(e){
+    if (!e.target || e.target.id !== 'cookie-accept') return;
+    gtag('consent', 'update', {analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted'});
+  });
 </script>
