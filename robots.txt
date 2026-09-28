@@ -1,6 +1,9 @@
 # robots.txt — allow all crawlers, including AI/LLM search bots
 User-agent: *
 Allow: /
+Disallow: /vantage-point-web/
+Disallow: /template/
+Disallow: /test/
 
 # AI / LLM search crawlers (explicit allow)
 User-agent: GPTBot
