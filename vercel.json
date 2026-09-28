@@ -103,6 +103,18 @@
     {
       "source": "/data-processing",
       "destination": "/data-processing.html"
+    },
+    {
+      "source": "/websites-for/flooring",
+      "destination": "/websites-for/flooring.html"
+    },
+    {
+      "source": "/websites-for/pool-service",
+      "destination": "/websites-for/pool-service.html"
+    },
+    {
+      "source": "/websites-for/artificial-turf",
+      "destination": "/websites-for/artificial-turf.html"
     }
   ]
 }
