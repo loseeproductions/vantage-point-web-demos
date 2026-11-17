@@ -1,513 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='9' fill='%233D6EFF'/%3E%3Crect x='11' y='11' width='8' height='8' fill='%23FFB020' transform='rotate(45 15 15)'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vantage Point Web Design | Websites That Record Where Your Jobs Came From</title>
-<meta name="description" content="Websites built to record where every lead came from, plus a one-time audit of the customer information you already have, and monthly upkeep so the numbers stay true. Every account stays in your name.">
-<link rel="canonical" href="https://vantagepointwebdesign.us/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Vantage Point Web Design">
-<meta property="og:title" content="Vantage Point Web Design | Websites That Record Where Your Jobs Came From">
-<meta property="og:description" content="Websites built to record where every lead came from, plus an audit of the customer information you already have. Every account stays in your name.">
-<meta property="og:url" content="https://vantagepointwebdesign.us/">
-<meta property="og:image" content="https://vantagepointwebdesign.us/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vantagepointwebdesign.us/og.png">
-<meta name="twitter:title" content="Vantage Point Web Design — Get Your Business Found Online">
-<meta name="twitter:description" content="Websites built to record where every lead came from, plus an audit of the customer information you already have. Every account stays in your name.">
+<meta name="description" content="Websites and lead tracking for local service businesses in Orange County.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<style>
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:#05081A;color:#EAEEFC;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  ::selection{background:rgba(61,110,255,.4)}
-  a{color:inherit;text-decoration:none}
-  @keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.08)}}
-  @keyframes floatOrb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.12)}}
-  @media(max-width:820px){
-    [data-navlinks]{display:none !important}
-    [data-hero-h1]{font-size:44px !important}
-    [data-grid3],[data-grid4],[data-grid6],[data-grid2]{grid-template-columns:1fr !important}
-    [data-hero-stats]{flex-wrap:wrap !important;gap:24px !important}
-    [data-sec]{padding:72px 22px !important}
-    [data-cta-h2]{font-size:38px !important}
-  }
-/* vpw-a11y */#main-nav a,footer a{display:inline-flex;align-items:center;min-height:44px}#main-nav [data-navlinks] a{min-height:44px}</style>
-
-<!-- LLM / AI-search discovery: structured data -->
-<!-- TODO: add a "sameAs" array to the ProfessionalService node once verified profile URLs exist
-     (Google Business Profile, Facebook, LinkedIn). Only add real, verifiable URLs — omit until then. -->
-<!-- NOTE: aggregateRating (previously 5/80) was removed 2026-09-02 because it had ZERO verifiable
-     Review objects backing it (Google manual-action / spammy-structured-data risk). Re-add an
-     AggregateRating ONLY together with real Review objects (named clients, dates, ideally GBP-sourced). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://vantagepointwebdesign.us/#business",
-  "name": "Vantage Point Web Design",
-  "url": "https://vantagepointwebdesign.us",
-  "description": "Vantage Point Web Design rebuilds small business websites so they record where every lead came from, audits the customer data you already have, and keeps it connected to the system you already use.",
-  "slogan": "Know which dollar produced which job.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "serviceType": [
-    "Website design",
-    "Local SEO",
-    "Google Business Profile setup",
-    "Online booking setup",
-    "Call tracking",
-    "Booking and quote requests",
-    "Domain and email setup"
-  ],
-  "knowsAbout": [
-    "small business websites",
-    "local service business websites",
-    "plumber websites",
-    "HVAC websites",
-    "contractor websites",
-    "restaurant websites",
-    "salon websites",
-    "local search optimization"
-  ],
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "Website rebuild",
-      "description": "A website rebuilt so every lead arrives with its source attached. Forms, phone and booking all record where the customer came from. From $1,500, one time."
-    },
-    {
-      "@type": "Offer",
-      "name": "Data audit",
-      "description": "A one-time audit of the customer records you already have, from a single export. Who has gone quiet, which quotes were never followed up, who sends referrals, and what is duplicated or blank. $1,500 to $3,000."
-    },
-    {
-      "@type": "Offer",
-      "name": "Monthly upkeep",
-      "description": "We maintain the tracking, watch for silent failures, and deliver three decisions a month with a dollar attached to each. $799 to $1,500 per month."
-    }
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "info@vantagepointwebdesign.us",
-    "areaServed": "US",
-    "availableLanguage": "English"
-  },
-  "potentialAction": {
-    "@type": "OrderAction",
-    "name": "Get a free look at your lead sources",
-    "target": "https://vantagepointwebdesign.us"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do I have to pay before I see anything?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Send an export of your customer list and we will tell you the three biggest things in it at no charge, before any money changes hands."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast can my website be live?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "About 5 business days from the day you approve your demo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you help me get found on Google?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Google Business Profile setup and local SEO are included so customers find you in Google Maps and local search."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can customers book appointments on my site?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Online booking and quote requests are included in every website build, and each one records where the booking came from."
-      }
-    }
-  ]
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 </head>
-<body>
-<div style="position:relative;width:100%;overflow:hidden">
+<body data-rec="off">
+<header class="topbar"><div class="wrap nav">
+  <a class="brand" href="/"><i aria-hidden="true"></i>Vantage Point</a>
+  <nav class="links" aria-label="Main"><a href="/samples">Sample sites</a><a href="/where-your-jobs-come-from">How it works</a><a href="/audit">The audit</a><a href="/pricing">Pricing</a><a href="/compare">Compare</a><a href="/about">About</a></nav>
+  <a class="btn" href="/#scorecard">Get your scorecard</a>
+</div></header>
+<main>
 
-<!-- NAV -->
-<nav id="main-nav" style="position:fixed;top:0;left:0;right:0;height:70px;z-index:100;transition:background .3s,border-color .3s,backdrop-filter .3s;background:rgba(7,11,30,0);backdrop-filter:blur(0px);border-bottom:1px solid rgba(255,255,255,0)">
-  <div style="max-width:1200px;margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between">
-    <a href="#top" style="display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:-.02em">
-      <span style="width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(61,110,255,.45)">
-        <span style="width:11px;height:11px;border-radius:3px;background:#FFB020;transform:rotate(45deg);display:block"></span>
-      </span>
-      Vantage Point
-    </a>
-    <div data-navlinks style="display:flex;align-items:center;gap:34px;font-size:14.5px;font-weight:500;color:#A6AECB">
-        <a href="/where-your-jobs-come-from">How it works</a> <a href="/audit">The audit</a> <a href="#services">Services</a> <a href="#industries">Who we serve</a> <a href="/pricing">Pricing</a> <a href="/about">About</a>
-      </div>
-    <a href="/audit" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:11px;background:#fff;color:#05081A;font-weight:700;font-size:14px;box-shadow:0 8px 24px rgba(255,255,255,.12)">
-        Free look <span style="width:6px;height:6px;border-radius:50%;background:#FFB020;box-shadow:0 0 0 3px rgba(255,176,32,.25);display:block"></span>
-    </a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header id="top" data-sec style="position:relative;padding:180px 28px 120px;text-align:center;background:radial-gradient(120% 90% at 50% -10%,#0E1740 0%,#070B22 45%,#05081A 100%)">
-  <div style="position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'%3E%3Cpath d='M-50 90 C 250 44, 450 136, 700 90 S 1150 44, 1450 90' fill='none' stroke='rgba(91,134,255,0.16)' stroke-width='1.3'/%3E%3Cpath d='M-50 180 C 250 134, 450 226, 700 180 S 1150 134, 1450 180' fill='none' stroke='rgba(123,224,255,0.11)' stroke-width='1.3'/%3E%3Cpath d='M-50 270 C 250 224, 450 316, 700 270 S 1150 224, 1450 270' fill='none' stroke='rgba(91,134,255,0.16)' stroke-width='1.3'/%3E%3Cpath d='M-50 360 C 250 314, 450 406, 700 360 S 1150 314, 1450 360' fill='none' stroke='rgba(123,224,255,0.11)' stroke-width='1.3'/%3E%3Cpath d='M-50 450 C 250 404, 450 496, 700 450 S 1150 404, 1450 450' fill='none' stroke='rgba(91,134,255,0.16)' stroke-width='1.3'/%3E%3Cpath d='M-50 540 C 250 494, 450 586, 700 540 S 1150 494, 1450 540' fill='none' stroke='rgba(123,224,255,0.11)' stroke-width='1.3'/%3E%3Cpath d='M-50 630 C 250 584, 450 676, 700 630 S 1150 584, 1450 630' fill='none' stroke='rgba(91,134,255,0.16)' stroke-width='1.3'/%3E%3Cpath d='M-50 720 C 250 674, 450 766, 700 720 S 1150 674, 1450 720' fill='none' stroke='rgba(123,224,255,0.11)' stroke-width='1.3'/%3E%3Cpath d='M-50 810 C 250 764, 450 856, 700 810 S 1150 764, 1450 810' fill='none' stroke='rgba(91,134,255,0.16)' stroke-width='1.3'/%3E%3C/svg%3E&quot;);background-size:1400px 900px;mask-image:radial-gradient(80% 70% at 50% 30%,#000 20%,transparent 80%);-webkit-mask-image:radial-gradient(80% 70% at 50% 30%,#000 20%,transparent 80%)"></div>
-  <canvas id="particle-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9"></canvas>
-  <div style="position:absolute;top:6%;left:14%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(61,110,255,.55),transparent 68%);filter:blur(30px);animation:floatOrb 14s ease-in-out infinite;pointer-events:none"></div>
-  <div style="position:absolute;top:22%;right:12%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,32,.30),transparent 68%);filter:blur(30px);animation:floatOrb2 17s ease-in-out infinite;pointer-events:none"></div>
-  <div style="position:relative;max-width:940px;margin:0 auto">
-    <div data-reveal style="display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 8px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);font-size:13px;color:#C4CBE6;margin-bottom:30px;backdrop-filter:blur(10px)">
-      <span style="padding:3px 9px;border-radius:100px;background:linear-gradient(120deg,#3D6EFF,#5B86FF);font-size:11px;font-weight:700;letter-spacing:.02em;color:#fff">FREE LOOK</span>
-      Send one export. Find out where your jobs actually come from.
-    </div>
-    <h1 data-hero-h1 data-hero-words style="font-size:74px;line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 26px">
-      <span style="display:inline-block">The most expensive thing</span><br>
-      <span style="display:inline-block">on your website is</span><br>
-      <span style="display:inline-block"><span style="background:linear-gradient(110deg,#5B86FF,#7BE0FF 55%,#FFB020);-webkit-background-clip:text;background-clip:text;color:transparent">what it doesn&rsquo;t record</span>.</span>
-    </h1>
-    <p data-reveal style="max-width:640px;margin:0 auto 40px;font-size:19px;line-height:1.6;color:#A6AECB">
-      Most sites record that someone got in touch. Almost none record what made them get in touch. We rebuild yours so every lead arrives with its source attached, audit the customer information you already have, and keep it connected to the system you already use. Every account stays in your name.
-    </p>
-    <div data-reveal style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px">
-      <a href="https://cal.com/t10xck/vpw-consult" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:13px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);color:#fff;font-weight:700;font-size:16px;box-shadow:0 14px 34px rgba(61,110,255,.42)">
-        Get your free look →
-      </a>
-      <a href="/where-your-jobs-come-from" style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;font-weight:600;font-size:16px;backdrop-filter:blur(10px)">
-        How this works
-      </a>
-    </div>
-    <div data-reveal data-hero-stats style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:12px">
-        <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,rgba(61,110,255,.3),rgba(61,110,255,.08));border:1px solid rgba(91,134,255,.4);display:flex;align-items:center;justify-content:center"><span style="width:13px;height:13px;border-radius:4px;background:#FFB020;transform:rotate(45deg);display:block"></span></div>
-        <div style="text-align:left;font-size:13px;line-height:1.35;color:#A6AECB">
-          <div style="color:#fff;font-size:14px;font-weight:700;letter-spacing:-.01em">You own every account</div>
-          Your site, your records, your ad accounts. In your name.
-        </div>
-      </div>
-      <div style="width:1px;height:34px;background:rgba(255,255,255,.12)"></div>
-      <div style="display:flex;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7C86AB;letter-spacing:.02em">
-        <span>PLUMBERS</span><span>HVAC</span><span>SALONS</span><span>RESTAURANTS</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-
-<!-- WHAT WE DO -->
-<section id="services" data-sec style="max-width:1200px;margin:0 auto;padding:110px 28px">
-  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 64px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#5B86FF;margin-bottom:16px">01 &middot; WHAT WE DO</div>
-    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 18px">Three things, in this order</h2>
-    <p style="font-size:18px;line-height:1.6;color:#A6AECB;margin:0">You can buy them separately. Most people start in the middle, because that is the one that pays for itself first.</p>
-  </div>
-  <div data-grid3 style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-    <div data-reveal style="padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);box-shadow:0 20px 50px rgba(0,0,0,.28)">
-      <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(140deg,rgba(61,110,255,.25),rgba(61,110,255,.05));border:1px solid rgba(91,134,255,.35);display:flex;align-items:center;justify-content:center;margin-bottom:22px"><span style="width:20px;height:20px;border:2.5px solid #7BE0FF;border-radius:50%;border-top-color:transparent;transform:rotate(45deg);display:block"></span></div>
-      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px">Rebuild it to capture</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#98A0C0;margin:0">Most sites were never built to record where a customer came from. We fix the forms, the phone and the booking so every lead arrives with its origin attached.</p>
-    </div>
-    <div data-reveal style="padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);box-shadow:0 20px 50px rgba(0,0,0,.28)">
-      <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(140deg,rgba(61,110,255,.25),rgba(61,110,255,.05));border:1px solid rgba(91,134,255,.35);display:flex;align-items:center;justify-content:center;margin-bottom:22px"><span style="width:18px;height:18px;border:2.5px solid #7BE0FF;border-radius:5px;transform:rotate(45deg);display:block"></span></div>
-      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px">Audit what you already have</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#98A0C0;margin:0">Send one export. We tell you who has gone quiet, which quotes were never followed up, who sends you referrals, and what is duplicated or blank.</p>
-    </div>
-    <div data-reveal style="padding:34px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);box-shadow:0 20px 50px rgba(0,0,0,.28)">
-      <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(140deg,rgba(255,176,32,.22),rgba(255,176,32,.04));border:1px solid rgba(255,176,32,.35);display:flex;align-items:center;justify-content:center;margin-bottom:22px"><span style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:17px solid #FFB020;display:block"></span></div>
-      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px">Keep it connected</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#98A0C0;margin:0">Nothing stays accurate on its own. We maintain the tracking and hand you three decisions a month, each with a dollar next to it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY IT WORKS -->
-<section id="why" data-sec style="position:relative;padding:110px 28px;background:linear-gradient(180deg,#05081A,#080D26 50%,#05081A)">
-  <div style="max-width:1200px;margin:0 auto">
-    <div data-reveal style="max-width:680px;margin:0 0 60px">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#FFB020;margin-bottom:16px">02 &middot; WHY IT WORKS</div>
-      <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0">Built so you are never stuck</h2>
-    </div>
-    <div data-grid4 style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
-      <div data-reveal style="padding:30px 26px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:600;color:#3D6EFF;margin-bottom:16px">01</div><h3 style="font-size:19px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em">You own every account</h3><p style="font-size:14.5px;line-height:1.6;color:#98A0C0;margin:0">Your site, your customer system, your ad accounts, your domain. All in your name and billed to you, with us added as a user you can remove any time.</p></div>
-      <div data-reveal style="padding:30px 26px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:600;color:#3D6EFF;margin-bottom:16px">02</div><h3 style="font-size:19px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em">Every price is published</h3><p style="font-size:14.5px;line-height:1.6;color:#98A0C0;margin:0">Every price is published on the site. You approve the number before anything starts, and nothing renews without you.</p></div>
-      <div data-reveal style="padding:30px 26px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:600;color:#3D6EFF;margin-bottom:16px">03</div><h3 style="font-size:19px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em">We never send on your behalf</h3><p style="font-size:14.5px;line-height:1.6;color:#98A0C0;margin:0">Campaigns go out from software you already pay for. That keeps the messaging rules, and the liability that comes with them, where they belong.</p></div>
-      <div data-reveal style="padding:30px 26px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:600;color:#FFB020;margin-bottom:16px">04</div><h3 style="font-size:19px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em">We tell you when it breaks</h3><p style="font-size:14.5px;line-height:1.6;color:#98A0C0;margin:0">Tracking fails quietly. It does not warn you, it just starts writing nothing. We watch for that and tell you before you notice.</p></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- SERVICES GRID -->
-<section data-sec style="max-width:1200px;margin:0 auto;padding:60px 28px 110px">
-  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 60px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#5B86FF;margin-bottom:16px">03 &middot; SERVICES</div>
-    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0">What we actually set up</h2>
-  </div>
-  <div data-grid6 style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#5B86FF;box-shadow:0 0 0 5px rgba(91,134,255,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">Lead source capture</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">The campaign that brought someone in travels with them across the site and arrives attached to the enquiry, instead of being thrown away at the form.</p></div>
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#5B86FF;box-shadow:0 0 0 5px rgba(91,134,255,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">Google Business Profile</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">Set up properly, and separated in your reporting so calls and messages from your listing stop showing up as no source at all.</p></div>
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#5B86FF;box-shadow:0 0 0 5px rgba(91,134,255,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">Call tracking</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">In the trades most people ring rather than fill in a form. Tracked numbers mean a call from an ad and a call from a referral stop looking identical.</p></div>
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#5B86FF;box-shadow:0 0 0 5px rgba(91,134,255,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">Booking and quote requests</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">Appointments and quote forms that log where the customer came from, so the booking can be traced back to whatever produced it.</p></div>
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#5B86FF;box-shadow:0 0 0 5px rgba(91,134,255,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">Records cleanup</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">Duplicates merged, phone numbers and addresses normalized, and your lead source list rebuilt so it can tell paid search from a maps listing.</p></div>
-    <div data-reveal style="padding:30px 28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)"><div style="width:11px;height:11px;border-radius:4px;background:#FFB020;box-shadow:0 0 0 5px rgba(255,176,32,.15);transform:rotate(45deg);margin-bottom:22px"></div><h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px">The monthly number</h3><p style="font-size:15px;line-height:1.6;color:#98A0C0;margin:0">Three decisions a month with a dollar on each, plus whether last month&#x27;s actually got done and what came of them.</p></div>
-  </div>
-</section>
-
-
-
-<!-- WHO WE SERVE / INTERNAL LINKING -->
-<section id="industries" data-sec style="max-width:1200px;margin:0 auto;padding:60px 28px 100px">
-  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 48px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#FFB020;margin-bottom:16px">WHO WE SERVE</div>
-    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 18px">Websites built for your trade</h2>
-    <p style="font-size:18px;line-height:1.6;color:#A6AECB;margin:0">We know how customers search for your service. Pick your trade to see exactly what we build for it.</p>
-  </div>
-  <div data-grid4 style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px">
-    <a href="/websites-for/plumbers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Plumbers →</a>
-    <a href="/websites-for/hvac" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">HVAC companies →</a>
-    <a href="/websites-for/electricians" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Electricians →</a>
-    <a href="/websites-for/roofers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Roofers →</a>
-    <a href="/websites-for/landscapers" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Landscapers →</a>
-    <a href="/websites-for/salons" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Salons &amp; barbers →</a>
-    <a href="/websites-for/restaurants" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Restaurants →</a>
-    <a href="/websites-for/flooring" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Flooring &rarr;</a>
-    <a href="/websites-for/pool-service" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Pool service &rarr;</a>
-    <a href="/websites-for/artificial-turf" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:16px;color:#EAEEFC;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">Artificial turf &rarr;</a>
-    <a href="#book" data-reveal style="padding:22px 24px;border-radius:16px;background:rgba(255,176,32,.1);border:1px solid rgba(255,176,32,.3);font-weight:600;font-size:16px;color:#FFB020;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,176,32,.6)'" onmouseout="this.style.borderColor='rgba(255,176,32,.3)'">Other trade? Ask us →</a>
-  </div>
-  
-</section>
-
-<!-- PRICING -->
-
-<!-- DEMO SITES -->
-<section id="demos" data-sec style="max-width:1200px;margin:0 auto;padding:80px 28px 40px">
-  <div data-reveal style="text-align:center;max-width:680px;margin:0 auto 56px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#5B86FF;margin-bottom:16px">DEMO SITES</div>
-    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 18px">See what we build</h2>
-    <p style="font-size:18px;line-height:1.6;color:#A6AECB;margin:0">Click into any of these live demos, built free, exactly like we'd build yours. No cost to look.</p>
-  </div>
-  <div data-grid3 style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-    <a href="https://vantagepointwebdesign.us/demos/auto-repair" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x1F527;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">Auto Repair</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">Services, hours, location, and a click-to-call CTA. Everything a shop needs.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-    <a href="https://vantagepointwebdesign.us/demos/hair-salon" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x2702;&#xFE0F;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">Hair Salon</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">Warm, modern salon site with services, gallery, and online booking.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-    <a href="https://vantagepointwebdesign.us/demos/hvac" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x1F4A8;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">HVAC</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">Emergency call CTA, services breakdown, and 5-star reviews front and center.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-    <a href="https://vantagepointwebdesign.us/demos/landscaper" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x1F33F;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">Landscaper</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">Gallery, service area, and quote request form. Everything to convert visitors.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-    <a href="https://vantagepointwebdesign.us/demos/plumber" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x1F6B0;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">Plumber</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">24/7 emergency site with flat-rate pricing and one-tap call button above the fold.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-    <a href="https://vantagepointwebdesign.us/demos/restaurant" target="_blank" rel="noopener" data-reveal style="display:flex;flex-direction:column;padding:28px;border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px);text-decoration:none;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(61,110,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
-      <div style="font-size:32px;margin-bottom:14px">&#x1F37D;&#xFE0F;</div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:#EAEEFC">Restaurant</div>
-      <div style="font-size:14px;color:#98A0C0;line-height:1.5;margin-bottom:16px;flex:1">Menu preview, hours, location, and online reservation link, all in one page.</div>
-      <div style="font-size:13px;color:#5B86FF;font-weight:600">View live demo &#x2192;</div>
-    </a>
-  </div>
-  <div data-reveal style="text-align:center;margin-top:48px">
-    <p style="font-size:16px;color:#A6AECB;margin-bottom:20px">Your industry not listed? We build for any local service business.</p>
-    <a href="https://cal.com/t10xck/vpw-consult" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:13px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);color:#fff;font-weight:700;font-size:16px;box-shadow:0 14px 34px rgba(61,110,255,.42);text-decoration:none">Book 20 minutes &#x2192;</a>
-  </div>
-</section>
-<section id="pricing" data-sec style="max-width:1200px;margin:0 auto;padding:40px 28px 110px">
-  <div data-reveal style="text-align:center;max-width:720px;margin:0 auto 60px">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#FFB020;margin-bottom:16px">04 &middot; PRICING</div>
-    <h2 style="font-size:46px;line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 18px">Published, on purpose</h2>
-    <p style="font-size:17px;line-height:1.6;color:#A6AECB;margin:0">Most people in this business will not tell you what anything costs until they have you on a call. Start anywhere. Most people start with the audit, because it is the one that pays for itself first.</p>
-  </div>
-  <div data-grid3 style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
-    <div data-reveal style="position:relative;display:flex;flex-direction:column;padding:34px 30px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px)">
-      
-      <div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8790B5;margin-bottom:14px">Website rebuild</div>
-      <div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:40px;font-weight:800;letter-spacing:-.03em">from $1,500</span><span style="font-size:14px;color:#8790B5">one time</span></div>
-      <div style="font-size:13.5px;color:#8790B5;margin-top:6px">Priced on the size of the site</div>
-      <div style="height:1px;background:rgba(255,255,255,.1);margin:24px 0"></div>
-      <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px"><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Built to record where every lead came from</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Source carried from the ad to the form</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Your phone number tracked, not guessed at</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mobile first, fast, and yours to keep</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Booking and quote requests that log a source</li></ul>
-      <a href="/audit" style="display:block;text-align:center;padding:13px 20px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:15px;margin-top:auto">Talk it through</a>
-    </div>
-    <div data-reveal style="position:relative;display:flex;flex-direction:column;padding:34px 30px;border-radius:22px;background:linear-gradient(165deg,rgba(61,110,255,.22),rgba(20,32,79,.5));border:1px solid rgba(91,134,255,.5);backdrop-filter:blur(14px);box-shadow:0 30px 70px rgba(61,110,255,.28)">
-      <div style="position:absolute;top:-11px;left:30px;padding:5px 12px;border-radius:100px;background:linear-gradient(120deg,#3D6EFF,#5B86FF);font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#fff">START HERE</div>
-      <div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8790B5;margin-bottom:14px">Data audit</div>
-      <div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:40px;font-weight:800;letter-spacing:-.03em">$1,500 to $3,000</span><span style="font-size:14px;color:#8790B5">one time</span></div>
-      <div style="font-size:13.5px;color:#8790B5;margin-top:6px">One export. No logins, no access.</div>
-      <div style="height:1px;background:rgba(255,255,255,.1);margin:24px 0"></div>
-      <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px"><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#BDD6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Who has gone quiet at 12, 18 and 24 months</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#BDD6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Quotes sent, never followed up, and their value</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#BDD6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Who is actually sending you referrals</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#BDD6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Duplicates merged, records normalized</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#BDD6FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Your lead sources rebuilt so they mean something</li></ul>
-      <a href="/audit" style="display:block;text-align:center;padding:13px 20px;border-radius:12px;background:#fff;color:#05081A;font-weight:600;font-size:15px;margin-top:auto">Get your free look</a>
-    </div>
-    <div data-reveal style="position:relative;display:flex;flex-direction:column;padding:34px 30px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px)">
-      
-      <div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8790B5;margin-bottom:14px">Keep it connected</div>
-      <div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:40px;font-weight:800;letter-spacing:-.03em">$799 to $1,500</span><span style="font-size:14px;color:#8790B5">per month</span></div>
-      <div style="font-size:13.5px;color:#8790B5;margin-top:6px">Cancel any time. Nothing is held.</div>
-      <div style="height:1px;background:rgba(255,255,255,.1);margin:24px 0"></div>
-      <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px"><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>We maintain the tracking so it keeps working</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Three decisions a month, each with a dollar on it</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>We tell you when something breaks, before you notice</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Monthly check of our numbers against your books</li><li style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.4;color:#C4CBE6"><span style="flex:0 0 auto;margin-top:4px"><svg width="10" height="10" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.7 9.5 3.5" fill="none" stroke="#7BE0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Every account stays in your name</li></ul>
-      <a href="/monthly" style="display:block;text-align:center;padding:13px 20px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:15px;margin-top:auto">How the month runs</a>
-    </div>
-  </div>
-  <p data-reveal style="text-align:center;font-size:14px;color:#7C86AB;margin:34px auto 0;max-width:640px;line-height:1.6">Campaigns go out from software you already pay for. We build the list and measure the result, we do not send on your behalf.</p>
-</section>
-
-
-<!-- FINAL CTA -->
-<section id="book" data-sec style="padding:120px 28px">
-  <div data-reveal style="position:relative;max-width:1000px;margin:0 auto;border-radius:28px;overflow:hidden;background:radial-gradient(120% 140% at 50% 0%,#12204F 0%,#0A1130 55%,#080C24 100%);border:1px solid rgba(91,134,255,.22);padding:80px 40px;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.5)">
-    <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:360px;height:220px;background:radial-gradient(circle,rgba(255,176,32,.28),transparent 70%);filter:blur(30px);pointer-events:none"></div>
-    <div style="position:relative">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;color:#7BE0FF;margin-bottom:20px">SEE IT BEFORE YOU BUY</div>
-      <h2 data-cta-h2 style="font-size:52px;line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:0 auto 20px;max-width:680px">Start with one export</h2>
-      <p style="font-size:18px;line-height:1.6;color:#B4BBD8;max-width:520px;margin:0 auto 40px">Send one export of your customer list and your quotes. We will tell you where your jobs actually came from and what is missing, at no charge. No logins, no pressure, and every account stays in your name.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a href="/audit" style="display:inline-flex;align-items:center;gap:10px;padding:17px 34px;border-radius:14px;background:linear-gradient(140deg,#FFB020,#FF9500);color:#1A1200;font-weight:800;font-size:17px;box-shadow:0 16px 40px rgba(255,176,32,.4)">
-          Get your free look →
-        </a>
-        <a href="mailto:info@vantagepointwebdesign.us" style="display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:17px">
-          Or email us
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="border-top:1px solid rgba(255,255,255,.08);padding:44px 28px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
-    <a href="#top" style="display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;letter-spacing:-.02em">
-      <span style="width:26px;height:26px;border-radius:8px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border-radius:3px;background:#FFB020;transform:rotate(45deg);display:block"></span></span>
-      Vantage Point
-    </a>
-    <div style="font-size:13.5px;color:#7C86AB">© 2026 Vantage Point Web Design, a DBA of Losee Productions LLC. All rights reserved.</div>
-    <div style="display:flex;gap:22px;font-size:13.5px;color:#A6AECB">
-      <a href="#services">Services</a><a href="/about">About</a><a href="/compare">Compare</a><a href="#book">Contact</a><a href="#top">Top ↑</a>
-    </div>
-  </div>
-</footer>
+<div class="wrap say">
+  <h1>Business is good.<br>I <span class="flip" id="flip">couldn’t tell you why</span></h1>
+  <p class="hint"><span><b>1</b> Turn recording on</span><span><b>2</b> Watch what changes</span></p>
 </div>
 
+<div class="wrap">
+<section class="machine" aria-label="Lead recorder demo">
+  <div class="panel">
+    <div class="switch">
+      <span class="lbl">Record where leads come from</span>
+      <button class="rec nudge" id="rec" role="switch" aria-checked="false" aria-label="Record lead sources">
+        <span class="side l" aria-hidden="true">Off</span><span class="side r" aria-hidden="true">On</span>
+        <span class="knob" id="knob" aria-hidden="true">Off</span>
+      </button>
+      <span class="led"><i aria-hidden="true"></i><span id="led-t">Recording is off</span></span>
+    </div>
+    <div class="dials">
+      <div class="dial"><span class="lbl">Leads</span><output id="d-leads">00</output></div>
+      <div class="dial known"><span class="lbl">Traced</span><output id="d-known">00</output></div>
+      <div class="dial bad wide"><span class="lbl" id="lost-l">Source unknown</span><output id="d-lost">00</output></div>
+      <div class="dial wide"><span class="lbl">Quoted so far</span><output id="d-quoted">$0</output></div>
+    </div>
+    <div class="keys">
+      <button class="key" id="pause">Pause</button>
+      <button class="key" id="again">Run again</button>
+    </div>
+  </div>
+  <div class="works">
+    <div class="printer">
+      <div class="slot" aria-hidden="true"></div>
+      <div class="feed" id="feed" aria-live="polite">
+        <noscript><div class="tk"><div class="no"><span>Lead 01</span><span>Example</span></div><div class="job">Water heater replacement</div><div>Tustin · <span class="amt">$1,840 quote</span></div><div class="src"><span>Source</span><span class="st">Google Ads</span></div></div></noscript>
+      </div>
+      <p class="say-now" id="now">These leads are arriving with no source<small>This is how most websites work. Turn recording on to see the difference.</small></p>
+    </div>
+    <div class="bins" id="bins"></div>
+  </div>
+  <div class="end" id="end" hidden>
+    <div><h2 id="end-h"></h2><p id="end-p"></p></div>
+    <div class="acts"><a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a><button class="btn alt" id="again2">Run it again</button></div>
+  </div>
+  <p class="eg">An example with made-up jobs and prices, not real customers</p>
+</section>
+</div>
 
+<section class="wrap score" id="scorecard">
+  <div class="score-txt">
+    <h2>First, a scorecard you can check yourself</h2>
+    <p>Before any call, we look at your business the way a customer would and write down what we find. You get two pages with up to ten findings, and every one comes with a check you can run yourself in a minute or two.</p>
+    <ul>
+      <li>Public information only. No logins and no export</li>
+      <li>Every finding can be checked without taking our word for it</li>
+      <li>Yours to keep, whether or not we ever work together</li>
+    </ul>
+    <a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a>
+  </div>
+  <figure class="sheet" aria-label="Example scorecard">
+    <div class="sheet-top"><span>Initial scorecard</span><span>Page 1 of 2</span></div>
+    <ol>
+      <li><b>Your Google listing and your website show different hours</b><span>Check it: search your business name and compare the two</span></li>
+      <li><b>A quote request sent from a phone gets no confirmation</b><span>Check it: send one to yourself and see what arrives</span></li>
+      <li><b>A call from an ad and a call from a referral look the same in your records</b><span>Check it: ask how your last five callers found you</span></li>
+    </ol>
+    <figcaption>Example findings. Yours come from your own business</figcaption>
+  </figure>
+</section>
 
+<section class="wrap blk" id="samples"><h2>See sample sites</h2><p>Six samples for six trades. Click through, send the form, and see how a request arrives with its source attached.</p><div class="cards three"><div class="card"><h3>Plumber</h3><p>Pick what is happening, get three steps to take now, then call or request a visit. The form records the source.</p><p><a class="btn" href="/demos/plumber">See sample site</a></p></div><div class="card"><h3>Heating and air</h3><p>A thermostat dial that fills in the visit request, plain price factors and plans. The form records the source.</p><p><a class="btn" href="/demos/hvac">See sample site</a></p></div><div class="card"><h3>Auto repair</h3><p>Findings sorted Now, Soon or Watch, with the request form on the first screen. It records the source.</p><p><a class="btn" href="/demos/auto-repair">See sample site</a></p></div><div class="card"><h3>Landscaper</h3><p>Drawn before it is built: process, projects and an estimate request that records the source.</p><p><a class="btn" href="/demos/landscaper">See sample site</a></p></div><div class="card"><h3>Salon</h3><p>Color planned before it is mixed, a clear service menu and a visit request that records the source.</p><p><a class="btn" href="/demos/hair-salon">See sample site</a></p></div><div class="card"><h3>Restaurant</h3><p>A candlelit menu, a plan-an-evening request and a table form that records the source.</p><p><a class="btn" href="/demos/restaurant">See sample site</a></p></div></div><p class="row"><a class="btn alt" href="/samples">All sample sites</a></p><p class="viz-note">Sample sites for made-up businesses. Names, numbers and prices are placeholders.</p></section>
+
+<section class="wrap three">
+  <h2>Three things, in this order</h2>
+  <div class="steps">
+    <div class="stepc"><span class="n">1</span><h3>Rebuild it to capture</h3><p>Most sites were never built to record where a customer came from. We fix the forms, the phone and the booking so every lead arrives with its origin attached.</p></div>
+    <div class="stepc mid"><span class="n">2</span><span class="tag">Most start here</span><h3>Audit what you already have</h3><p>Send one export. We tell you who has gone quiet, which quotes were never followed up, who sends you referrals, and what is duplicated or blank.</p></div>
+    <div class="stepc"><span class="n">3</span><h3>Keep it connected</h3><p>Nothing stays accurate on its own. We maintain the tracking and hand you three decisions a month, each with a dollar next to it.</p></div>
+  </div>
+</section>
+
+<section class="wrap trade-row"><h2>Built for your trade</h2><p>Pick yours to see what we build for it.</p><nav aria-label="Trades"><a href="/websites-for/plumbers">Plumbers</a><a href="/websites-for/hvac">Heating and air</a><a href="/websites-for/electricians">Electricians</a><a href="/websites-for/roofers">Roofers</a><a href="/websites-for/landscapers">Landscapers</a><a href="/websites-for/flooring">Flooring</a><a href="/websites-for/pool-service">Pool service</a><a href="/websites-for/artificial-turf">Artificial turf</a><a href="/websites-for/salons">Salons</a><a href="/websites-for/restaurants">Restaurants</a></nav></section>
+
+<section class="wrap prices" id="pricing">
+  <h2>Published, on purpose</h2>
+  <div class="tags">
+    <div class="ptag"><h3>Website rebuild</h3><span class="amt">from $1,500</span><span class="unit">one time, priced on site size</span><ul><li>Source carried from the ad to the form</li><li>Your phone number tracked, not guessed at</li><li>Booking and quote requests that log a source</li></ul><a class="btn alt" href="/audit">Talk it through</a></div>
+    <div class="ptag go"><h3>Data audit</h3><span class="amt">$1,500–$3,000</span><span class="unit">one time · one export, no logins</span><ul><li>Who has gone quiet at 12, 18 and 24 months</li><li>Quotes sent, never followed up, and their value</li><li>Who is actually sending you referrals</li></ul><a class="btn" href="#scorecard">Start with a scorecard</a></div>
+    <div class="ptag"><h3>Keep it connected</h3><span class="amt">$799–$1,500</span><span class="unit">per month · cancel any time</span><ul><li>We maintain the tracking so it keeps working</li><li>Three decisions a month, each with a dollar</li><li>Campaigns go out from software you already pay for</li></ul><a class="btn alt" href="/monthly">How the month runs</a></div>
+  </div>
+</section>
+
+<section class="wrap vows">
+  <div><h3>You own every account</h3><p>Your site, your customer system, your ad accounts, your domain. All in your name, with us added as a user you can remove any time.</p></div>
+  <div><h3>Every price is published</h3><p>You approve the number before anything starts, and nothing renews without you.</p></div>
+  <div><h3>We never send on your behalf</h3><p>Campaigns go out from software you already pay for, so the messaging rules stay where they belong.</p></div>
+  <div><h3>We tell you when it breaks</h3><p>Tracking fails quietly. We watch for that and tell you before you notice.</p></div>
+</section>
+
+<section class="band"><div class="wrap">
+  <h2>Start with the scorecard</h2>
+  <p>Two pages, up to ten findings, each with a check you can run yourself. Read it, test it, and decide from there. Every account stays in your name.</p>
+  <div class="row"><a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a><a class="btn alt" href="https://cal.com/t10xck/vpw-consult">Book a free consultation</a></div>
+</div></section>
 <script>
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) { nav.style.background='rgba(7,11,30,.72)';nav.style.backdropFilter='blur(16px)';nav.style.borderBottom='1px solid rgba(255,255,255,.08)'; }
-  else { nav.style.background='rgba(7,11,30,0)';nav.style.backdropFilter='blur(0px)';nav.style.borderBottom='1px solid rgba(255,255,255,0)'; }
-}, { passive: true });
-window.addEventListener('load', () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const h1 = document.querySelector('[data-hero-words]');
-  if (h1) { const spans = h1.querySelectorAll('span[style*="inline-block"]'); gsap.from(spans, { y:40, opacity:0, duration:.9, stagger:.12, ease:'power3.out', delay:.1 }); }
-  document.querySelectorAll('[data-reveal]').forEach(el => {
-    gsap.set(el, { opacity:0, y:34 });
-    gsap.to(el, { opacity:1, y:0, duration:.8, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 88%', once:true } });
-  });
-  document.querySelectorAll('[data-count]').forEach(el => {
-    const target = parseFloat(el.getAttribute('data-count'));
-    const suffix = el.getAttribute('data-suffix') || '';
-    const decimals = String(target).includes('.') ? 1 : 0;
-    const obj = { v:0 };
-    ScrollTrigger.create({ trigger:el, start:'top 90%', once:true, onEnter:() => gsap.to(obj, { v:target, duration:1.6, ease:'power2.out', onUpdate:() => { el.textContent = obj.v.toFixed(decimals) + suffix; } }) });
-  });
-});
-(function initParticles() {
-  const canvas = document.getElementById('particle-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W=0,H=0,pts=[],raf;
-  const dpr = Math.min(window.devicePixelRatio||1,2);
-  function resize() {
-    const r = canvas.getBoundingClientRect(); W=r.width; H=r.height;
-    canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    const count = Math.min(64, Math.round((W*H)/15000));
-    pts = Array.from({length:count}, () => ({ x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35, r:Math.random()*1.8+1, amber:Math.random()<.18 }));
-  }
-  resize(); window.addEventListener('resize', resize);
-  function step() {
-    ctx.clearRect(0,0,W,H);
-    for (let i=0;i<pts.length;i++) {
-      const p=pts[i]; p.x+=p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>W) p.vx*=-1; if(p.y<0||p.y>H) p.vy*=-1;
-      for (let j=i+1;j<pts.length;j++) {
-        const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d2=dx*dx+dy*dy;
-        if(d2<15000){const a=(1-d2/15000)*.28;ctx.strokeStyle=`rgba(91,134,255,${a})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
-      }
-    }
-    for (const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.amber?'rgba(255,176,32,.85)':'rgba(123,224,255,.7)';ctx.fill();}
-    raf=requestAnimationFrame(step);
-  }
-  step();
-})();
-</script>
-<script src="/js/track.js" defer></script>
-</body>
-</html>
-
-
-
-<script>
-// FOOTER LEGAL LINKS — inject Privacy Policy + Terms into footer
 (function(){
-  var links = document.querySelectorAll('footer a');
-  links.forEach(function(a){
-    if(a.textContent.trim() === 'Top ↑') {
-      var pp = document.createElement('a');
-      pp.href = '/privacy';
-      pp.textContent = 'Privacy Policy';
-      pp.style.cssText = 'color:#A6AECB';
-      var tos = document.createElement('a');
-      tos.href = '/terms';
-      tos.textContent = 'Terms of Service';
-      tos.style.cssText = 'color:#A6AECB';
-      a.parentNode.insertBefore(tos, a);
-      a.parentNode.insertBefore(pp, tos);
-    }
-  });
+  var $=function(i){return document.getElementById(i)};
+  var JOBS=[["Water heater replacement","Plumbing",1840],["AC replacement","Heating and air",7200],["Tile roof repair","Roofing",1900],["Front yard turf","Turf",6000],["Panel upgrade","Electrical",3200],["Sprinkler repair","Landscaping",380],["Pump replacement","Pool service",1350],["Hardwood floors","Flooring",7400],["Slab leak repair","Plumbing",2400],["Furnace repair","Heating and air",480],["Leak inspection","Roofing",350],["Car charger install","Electrical",1500]];
+  var CITIES=["Tustin","Irvine","Anaheim","Orange","Costa Mesa","Mission Viejo","Lake Forest","Huntington Beach"];
+  var SRC={ads:["Google Ads","--ads"],maps:["Maps listing","--maps"],ref:["Referral","--ref"],dir:["Direct","--dir"]};
+  var ORDER=["ads","maps","ref","ads","dir","maps","ads","ref","maps","ads","ref","dir"];
+  var BLANK_CAP=8,TRACED_GOAL=12,GAP_OFF=1500,GAP_ON=950;
+  var calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var on=false,paused=false,timer=null,tix=[],prev={};
+  function money(n){return "$"+Math.round(n).toLocaleString("en-US")}
+  function pad(n){n=Math.round(n);return (n<10?"0":"")+n}
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function count(e,from,to,fmt){
+    if(calm||from===to){e.textContent=fmt(to);return}
+    var t0=performance.now();
+    (function f(t){var k=Math.min(1,(t-t0)/500);k=1-Math.pow(1-k,3);e.textContent=fmt(from+(to-from)*k);if(k<1)requestAnimationFrame(f)})(t0);
+  }
+  function dial(id,to,fmt){var e=$(id),from=e._v||0;e._v=to;count(e,from,to,fmt)}
+  function traced(){return tix.filter(function(t){return t.rec})}
+  function blank(){return tix.filter(function(t){return !t.rec})}
+  function ticket(t,anim){
+    var k=el("div","tk"+(anim?" print":"")),no=el("div","no");
+    no.append(el("span",null,"Lead "+pad(t.i+1)),el("span",null,"Example"));
+    var where=el("div");where.append(t.trade+" · "+t.city+" · ",el("span","amt",money(t.price)+" quote"));
+    var src=el("div","src");src.append(el("span",null,"Source"),el("span","st"+(t.rec?"":" no-src"),t.rec?SRC[t.src][0]:"Not recorded"));
+    k.append(no,el("div","job",t.job),where,src);return k;
+  }
+  function bins(newest){
+    var b=$("bins");b.textContent="";
+    var groups=[["lost","Source unknown",blank(),"--lost"]];
+    Object.keys(SRC).forEach(function(s){groups.push([s,SRC[s][0],traced().filter(function(t){return t.src===s}),SRC[s][1]])});
+    groups.forEach(function(g){
+      var bin=el("div","bin"+(g[0]==="lost"?" lost":"")),st=el("div","stack");
+      g[2].forEach(function(t){var c=el("span","chip"+(t===newest?" new":""));c.style.setProperty("--c","var("+g[3]+")");st.append(c)});
+      var sum=el("div","sum"),big=el("b"),tot=g[0]==="lost"?g[2].length:g[2].reduce(function(a,t){return a+t.price},0);
+      count(big,prev[g[0]]||0,tot,g[0]==="lost"?function(n){n=Math.round(n);return n+(n===1?" lead":" leads")}:money);prev[g[0]]=tot;
+      sum.append(big,g[0]==="lost"?(g[2].length===1?"nothing says what brought it":"nothing says what brought them"):g[2].length+(g[2].length===1?" lead":" leads"));
+      bin.append(el("h3",null,g[1]),st,sum);b.append(bin);
+    });
+  }
+  function dials(){
+    dial("d-leads",tix.length,pad);dial("d-known",traced().length,pad);dial("d-lost",blank().length,pad);
+    dial("d-quoted",tix.reduce(function(a,t){return a+t.price},0),money);
+  }
+  function mood(){
+    var lost=blank().length,now=$("now"),waiting=!on&&lost>=BLANK_CAP;
+    document.body.dataset.rec=on?"on":"off";
+    $("rec").setAttribute("aria-checked",on);$("knob").textContent=on?"On":"Off";
+    $("flip").textContent=on?"can tell you exactly why":"couldn’t tell you why";
+    $("lost-l").textContent=on?"Source unknown, no longer growing":"Source unknown";
+    $("led-t").textContent=on?"Recording is on. Each lead arrives with its source":"Recording is off";
+    now.textContent="";
+    now.append(on?"Each lead now shows what brought it in":waiting?lost+" leads in, and nothing shows which marketing is working":"These leads are arriving with no source",
+      el("small",null,on?(lost?lost+" arrived before recording started, so nothing can say where they came from.":"Recording from the first lead, so every one can be traced."):waiting?"Turn recording on to see what changes.":"This is how most websites work. Turn recording on to see the difference."));
+    $("rec").classList.toggle("nudge",waiting);
+  }
+  function finish(){
+    var tot={},best=null,lost=blank().length;
+    traced().forEach(function(t){tot[t.src]=(tot[t.src]||0)+t.price});
+    Object.keys(tot).forEach(function(s){if(!best||tot[s]>tot[best])best=s});
+    $("end-h").textContent="Now a good month comes with a reason";
+    $("end-p").textContent="Every lead shows what brought it in. You know what to keep paying for, and what to stop.";
+    $("end").hidden=false;$("pause").disabled=true;
+  }
+  function done(){return on?traced().length>=TRACED_GOAL:blank().length>=BLANK_CAP}
+  function step(anim){
+    var i=tix.length,j=JOBS[i%JOBS.length],t={i:i,job:j[0],trade:j[1],price:j[2],city:CITIES[i%CITIES.length],src:ORDER[traced().length%ORDER.length],rec:on};
+    tix.push(t);var f=$("feed");f.textContent="";f.append(ticket(t,anim));
+    bins(anim?t:null);dials();mood();
+    if(on&&traced().length>=TRACED_GOAL)finish();
+  }
+  function loop(){clearTimeout(timer);if(paused||done())return;timer=setTimeout(function(){step(true);loop()},on?GAP_ON:GAP_OFF)}
+  function fill(){while(!done())step(false)}
+  function reset(){
+    clearTimeout(timer);tix=[];prev={};on=false;paused=false;$("pause").textContent="Pause";$("pause").disabled=false;$("end").hidden=true;
+    ["d-leads","d-known","d-lost","d-quoted"].forEach(function(id){$(id)._v=0});
+    $("feed").textContent="";bins();dials();mood();
+    if(calm)fill();else{step(true);loop()}
+  }
+  var touched=false,auto=false;
+  $("rec").onclick=function(){
+    if(!auto)touched=true;
+    on=!on;$("end").hidden=true;$("pause").disabled=false;
+    if(on&&traced().length>=TRACED_GOAL){tix=blank();tix.forEach(function(t,i){t.i=i});prev={}}
+    if(calm){fill();mood();return}
+    if(paused){paused=false;$("pause").textContent="Pause"}
+    if(done()){mood();bins();dials();return}
+    step(true);loop();
+  };
+  $("pause").onclick=function(){paused=!paused;this.textContent=paused?"Play":"Pause";loop()};
+  $("again").onclick=$("again2").onclick=reset;
+  reset();
+  setTimeout(function(){if(!touched&&!on){auto=true;$("rec").click();auto=false}},5000);
 })();
 </script>
-
+</main>
+<footer><div class="wrap foot">
+  <div><a class="brand" href="/"><i aria-hidden="true"></i>Vantage Point</a><p>Websites that record where your jobs came from. Orange County, CA.</p></div>
+  <nav aria-label="Trades"><b>Built for</b><a href="/websites-for/plumbers">Plumbers</a><a href="/websites-for/hvac">Heating and air</a><a href="/websites-for/electricians">Electricians</a><a href="/websites-for/roofers">Roofers</a><a href="/websites-for/landscapers">Landscapers</a><a href="/websites-for/flooring">Flooring</a><a href="/websites-for/pool-service">Pool service</a><a href="/websites-for/artificial-turf">Artificial turf</a><a href="/websites-for/salons">Salons</a><a href="/websites-for/restaurants">Restaurants</a></nav>
+  <nav aria-label="Company"><b>Company</b><a href="/samples">Sample sites</a><a href="/about">About</a><a href="/pricing">Pricing</a><a href="/compare">Compare</a><a href="/monthly">How the month runs</a><a href="mailto:info@vantagepointwebdesign.us">info@vantagepointwebdesign.us</a></nav>
+  <nav aria-label="Legal"><b>Legal</b><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/data-processing">Data processing</a></nav>
+</div></footer>
 <!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:18px 28px;background:rgba(10,15,35,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
   <p style="margin:0;font-size:14px;color:#A6AECB;max-width:680px;line-height:1.5">We use cookies to improve your experience and analyze site usage. By clicking "Accept All," you consent to our use of analytics and marketing cookies. See our <a href="/privacy" style="color:#5B86FF">Privacy Policy</a> for details.</p>
@@ -524,16 +238,6 @@ window.addEventListener('load', () => {
   document.getElementById('cookie-reject').addEventListener('click', function(){ localStorage.setItem('vpw_cookie_consent','essential'); banner.style.display='none'; });
 })();
 </script>
-</body>
-</html>
-
-
-<script>
-// Remove "See what we do" button from hero
-document.querySelectorAll('a[href="#services"]').forEach(function(a){ if(a.textContent.trim()==='See what we do') { a.href='#demos'; a.textContent='See demos'; } });
-</script>
-
-
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3XWVL1Q3Z"></script>
 <script>
@@ -551,3 +255,54 @@ document.querySelectorAll('a[href="#services"]').forEach(function(a){ if(a.textC
     gtag('consent', 'update', {analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted'});
   });
 </script>
+<script src="/js/track.js" defer></script>
+<script>(function(){
+var d=document,root=d.documentElement,calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+root.classList.add("js");
+/* sticky bar shadow */
+var bar=d.querySelector(".topbar");
+if(bar){var f=function(){bar.classList.toggle("stuck",scrollY>8)};addEventListener("scroll",f,{passive:true});f()}
+/* reveal on scroll */
+var io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15}):null;
+d.querySelectorAll(".blk .cards>.card,.blk li,.blk .faq>div,.blk table").forEach(function(el,i){
+  if(el.tagName==="TABLE"){el.classList.add("cmp");el.querySelectorAll("tbody tr").forEach(function(r,n){r.style.setProperty("--r",n)})}
+  else{el.classList.add("rv");el.style.setProperty("--d",(i%4)*.08+"s")}
+  if(io)io.observe(el);else el.classList.add("in");
+});
+/* audit: an export being read, findings appear as the beam passes */
+var chips=d.querySelector(".as-chips");
+if(chips){
+  var labels=["Gone quiet","Quotes that died","What leads to what","Who sends referrals","When people buy","Where work clusters","Never asked for a review","Blank sources"];
+  labels.forEach(function(t){var li=d.createElement("li");li.textContent=t;chips.appendChild(li)});
+  var lis=chips.children,n=0;
+  function round(){[].forEach.call(lis,function(l){l.classList.remove("on")});n=0;(function nx(){if(n<lis.length){lis[n++].classList.add("on");setTimeout(nx,calm?0:700)}})()}
+  round();if(!calm)setInterval(round,6400);
+}
+/* how it works: rotate the four, then fan them out */
+var st=d.querySelector(".fv-stage");
+if(st){
+  var cards=[].slice.call(st.children),cap=d.querySelector(".fv-cap"),k=0;
+  var caps=["Paid ads: the sponsored results.","Your maps listing.","The local services listing.","Someone typing your name in.","Four different things, one word on the form: “Google.”"];
+  function lay(s){
+    var w=st.clientWidth,cw=cards[0].offsetWidth,ch=cards[0].offsetHeight,gap=14,narrow=w<cw*4+gap*5;
+    cards.forEach(function(c,i){
+      var x=0,y=0,sc=1,o=1,r=0,z=1;
+      if(s<4){
+        if(i===s){z=5}else if(i<s){x=-60;sc=.9;o=0}else{y=18;sc=.92;o=0}
+      }else if(narrow){
+        x=(i%2-.5)*(cw+gap);y=(Math.floor(i/2))*(ch*.5+gap/2)-ch*.12;sc=.78;z=i+1;
+      }else{x=(i-1.5)*(cw+gap);r=(i-1.5)*2.5;sc=.94;z=i+1}
+      c.style.transform="translate("+x+"px,"+y+"px) scale("+sc+") rotate("+r+"deg)";c.style.opacity=o;c.style.zIndex=z;
+    });
+    cap.textContent=caps[s];
+  }
+  if(narrow2()){st.style.height="330px"}
+  function narrow2(){return st.clientWidth<cards[0].offsetWidth*4+70}
+  function tick(){lay(k);var hold=k===4?4200:1700;k=(k+1)%5;setTimeout(tick,hold)}
+  if(calm){lay(4)}else{lay(0);k=1;setTimeout(tick,1700)}
+  addEventListener("resize",function(){st.style.height=narrow2()&&(k===0||k===5||true)?"":"";lay((k+4)%5)});
+}
+})();
+</script>
+</body>
+</html>

@@ -115,6 +115,10 @@
     {
       "source": "/websites-for/artificial-turf",
       "destination": "/websites-for/artificial-turf.html"
+    },
+    {
+      "source": "/samples",
+      "destination": "/samples.html"
     }
   ]
 }
