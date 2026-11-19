@@ -1,250 +1,112 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vantage Point Web Design | Websites That Record Where Your Jobs Came From</title>
-<meta name="description" content="Websites and lead tracking for local service businesses in Orange County.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css">
-</head>
-<body data-rec="off">
-<header class="topbar"><div class="wrap nav">
-  <a class="brand" href="/"><i aria-hidden="true"></i>Vantage Point</a>
-  <nav class="links" aria-label="Main"><a href="/samples">Sample sites</a><a href="/where-your-jobs-come-from">How it works</a><a href="/audit">The audit</a><a href="/pricing">Pricing</a><a href="/compare">Compare</a><a href="/about">About</a></nav>
-  <a class="btn" href="/#scorecard">Get your scorecard</a>
-</div></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vantage Point Web Design | Websites That Record Where Your Jobs Came From</title><meta name="description" content="Websites and lead tracking for local service businesses in Orange County.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='3' fill='%23d8401f' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css"><script>document.documentElement.classList.add("js")</script></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html"><i aria-hidden="true"></i>Vantage Point</a><nav aria-label="Main"><a href="where-your-jobs-come-from.html">How it works</a><a href="audit.html">The audit</a><a href="samples.html">Sample sites</a><a href="pricing.html">Pricing</a><a href="about.html">About</a></nav><a class="btn" href="index.html#scorecard">Get your scorecard</a></div></header>
 <main>
-
-<div class="wrap say">
-  <h1>Business is good.<br>I <span class="flip" id="flip">couldn’t tell you why</span></h1>
-  <p class="hint"><span><b>1</b> Turn recording on</span><span><b>2</b> Watch what changes</span></p>
-</div>
-
-<div class="wrap">
-<section class="machine" aria-label="Lead recorder demo">
-  <div class="panel">
-    <div class="switch">
-      <span class="lbl">Record where leads come from</span>
-      <button class="rec nudge" id="rec" role="switch" aria-checked="false" aria-label="Record lead sources">
-        <span class="side l" aria-hidden="true">Off</span><span class="side r" aria-hidden="true">On</span>
-        <span class="knob" id="knob" aria-hidden="true">Off</span>
-      </button>
-      <span class="led"><i aria-hidden="true"></i><span id="led-t">Recording is off</span></span>
-    </div>
-    <div class="dials">
-      <div class="dial"><span class="lbl">Leads</span><output id="d-leads">00</output></div>
-      <div class="dial known"><span class="lbl">Traced</span><output id="d-known">00</output></div>
-      <div class="dial bad wide"><span class="lbl" id="lost-l">Source unknown</span><output id="d-lost">00</output></div>
-      <div class="dial wide"><span class="lbl">Quoted so far</span><output id="d-quoted">$0</output></div>
-    </div>
-    <div class="keys">
-      <button class="key" id="pause">Pause</button>
-      <button class="key" id="again">Run again</button>
-    </div>
+<section class="hero"><div class="wrap">
+  <p class="for">Websites for the <span class="rot" id="rot" data-words='["bakery","plumber","salon","dentist","taco shop","auto shop","landscaper","florist"]'><span>bakery</span></span> down the street</p>
+  <h1>Business is good. <span class="u">I couldn’t tell you why.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 4, 200 4, 297 12"/></svg></span></h1>
+  <p class="lede">Most websites take the call and forget where it came from. We build ones that write it down, so you can see which spending brings in the work.</p>
+  <div class="ctas"><a class="btn" data-magnet=".25" href="#scorecard">Get your free scorecard →</a><a class="btn ghost" href="https://cal.com/t10xck/vpw-consult">Book a free consultation</a></div>
+  <p class="fine">Every account stays in your name. Orange County, CA.</p>
+  <div class="feed" aria-label="Example lead feed">
+    <div class="feed-h"><span class="mono">Incoming leads</span><button class="sw" id="sw" role="switch" aria-checked="false">RECORD SOURCE <b aria-hidden="true"></b></button></div>
+    <div id="list" aria-live="polite"></div>
+    <div class="tally"><div class="bad"><span class="mono">Source unknown</span><output id="tb">0</output></div><div class="good"><span class="mono">Traced</span><output id="tg">0</output></div></div>
+    <p class="note mono">Example with made-up jobs. Flip the switch.</p>
   </div>
-  <div class="works">
-    <div class="printer">
-      <div class="slot" aria-hidden="true"></div>
-      <div class="feed" id="feed" aria-live="polite">
-        <noscript><div class="tk"><div class="no"><span>Lead 01</span><span>Example</span></div><div class="job">Water heater replacement</div><div>Tustin · <span class="amt">$1,840 quote</span></div><div class="src"><span>Source</span><span class="st">Google Ads</span></div></div></noscript>
-      </div>
-      <p class="say-now" id="now">These leads are arriving with no source<small>This is how most websites work. Turn recording on to see the difference.</small></p>
-    </div>
-    <div class="bins" id="bins"></div>
-  </div>
-  <div class="end" id="end" hidden>
-    <div><h2 id="end-h"></h2><p id="end-p"></p></div>
-    <div class="acts"><a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a><button class="btn alt" id="again2">Run it again</button></div>
-  </div>
-  <p class="eg">An example with made-up jobs and prices, not real customers</p>
-</section>
-</div>
-
-<section class="wrap score" id="scorecard">
-  <div class="score-txt">
-    <h2>First, a scorecard you can check yourself</h2>
-    <p>Before any call, we look at your business the way a customer would and write down what we find. You get two pages with up to ten findings, and every one comes with a check you can run yourself in a minute or two.</p>
-    <ul>
-      <li>Public information only. No logins and no export</li>
-      <li>Every finding can be checked without taking our word for it</li>
-      <li>Yours to keep, whether or not we ever work together</li>
-    </ul>
-    <a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a>
-  </div>
-  <figure class="sheet" aria-label="Example scorecard">
-    <div class="sheet-top"><span>Initial scorecard</span><span>Page 1 of 2</span></div>
-    <ol>
-      <li><b>Your Google listing and your website show different hours</b><span>Check it: search your business name and compare the two</span></li>
-      <li><b>A quote request sent from a phone gets no confirmation</b><span>Check it: send one to yourself and see what arrives</span></li>
-      <li><b>A call from an ad and a call from a referral look the same in your records</b><span>Check it: ask how your last five callers found you</span></li>
-    </ol>
-    <figcaption>Example findings. Yours come from your own business</figcaption>
-  </figure>
-</section>
-
-<section class="wrap blk" id="samples"><h2>See sample sites</h2><p>Six samples for six trades. Click through, send the form, and see how a request arrives with its source attached.</p><div class="cards three"><div class="card"><h3>Plumber</h3><p>Pick what is happening, get three steps to take now, then call or request a visit. The form records the source.</p><p><a class="btn" href="/demos/plumber">See sample site</a></p></div><div class="card"><h3>Heating and air</h3><p>A thermostat dial that fills in the visit request, plain price factors and plans. The form records the source.</p><p><a class="btn" href="/demos/hvac">See sample site</a></p></div><div class="card"><h3>Auto repair</h3><p>Findings sorted Now, Soon or Watch, with the request form on the first screen. It records the source.</p><p><a class="btn" href="/demos/auto-repair">See sample site</a></p></div><div class="card"><h3>Landscaper</h3><p>Drawn before it is built: process, projects and an estimate request that records the source.</p><p><a class="btn" href="/demos/landscaper">See sample site</a></p></div><div class="card"><h3>Salon</h3><p>Color planned before it is mixed, a clear service menu and a visit request that records the source.</p><p><a class="btn" href="/demos/hair-salon">See sample site</a></p></div><div class="card"><h3>Restaurant</h3><p>A candlelit menu, a plan-an-evening request and a table form that records the source.</p><p><a class="btn" href="/demos/restaurant">See sample site</a></p></div></div><p class="row"><a class="btn alt" href="/samples">All sample sites</a></p><p class="viz-note">Sample sites for made-up businesses. Names, numbers and prices are placeholders.</p></section>
-
-<section class="wrap three">
-  <h2>Three things, in this order</h2>
-  <div class="steps">
-    <div class="stepc"><span class="n">1</span><h3>Rebuild it to capture</h3><p>Most sites were never built to record where a customer came from. We fix the forms, the phone and the booking so every lead arrives with its origin attached.</p></div>
-    <div class="stepc mid"><span class="n">2</span><span class="tag">Most start here</span><h3>Audit what you already have</h3><p>Send one export. We tell you who has gone quiet, which quotes were never followed up, who sends you referrals, and what is duplicated or blank.</p></div>
-    <div class="stepc"><span class="n">3</span><h3>Keep it connected</h3><p>Nothing stays accurate on its own. We maintain the tracking and hand you three decisions a month, each with a dollar next to it.</p></div>
-  </div>
-</section>
-
-<section class="wrap trade-row"><h2>Built for your trade</h2><p>Pick yours to see what we build for it.</p><nav aria-label="Trades"><a href="/websites-for/plumbers">Plumbers</a><a href="/websites-for/hvac">Heating and air</a><a href="/websites-for/electricians">Electricians</a><a href="/websites-for/roofers">Roofers</a><a href="/websites-for/landscapers">Landscapers</a><a href="/websites-for/flooring">Flooring</a><a href="/websites-for/pool-service">Pool service</a><a href="/websites-for/artificial-turf">Artificial turf</a><a href="/websites-for/salons">Salons</a><a href="/websites-for/restaurants">Restaurants</a></nav></section>
-
-<section class="wrap prices" id="pricing">
-  <h2>Published, on purpose</h2>
-  <div class="tags">
-    <div class="ptag"><h3>Website rebuild</h3><span class="amt">from $1,500</span><span class="unit">one time, priced on site size</span><ul><li>Source carried from the ad to the form</li><li>Your phone number tracked, not guessed at</li><li>Booking and quote requests that log a source</li></ul><a class="btn alt" href="/audit">Talk it through</a></div>
-    <div class="ptag go"><h3>Data audit</h3><span class="amt">$1,500–$3,000</span><span class="unit">one time · one export, no logins</span><ul><li>Who has gone quiet at 12, 18 and 24 months</li><li>Quotes sent, never followed up, and their value</li><li>Who is actually sending you referrals</li></ul><a class="btn" href="#scorecard">Start with a scorecard</a></div>
-    <div class="ptag"><h3>Keep it connected</h3><span class="amt">$799–$1,500</span><span class="unit">per month · cancel any time</span><ul><li>We maintain the tracking so it keeps working</li><li>Three decisions a month, each with a dollar</li><li>Campaigns go out from software you already pay for</li></ul><a class="btn alt" href="/monthly">How the month runs</a></div>
-  </div>
-</section>
-
-<section class="wrap vows">
-  <div><h3>You own every account</h3><p>Your site, your customer system, your ad accounts, your domain. All in your name, with us added as a user you can remove any time.</p></div>
-  <div><h3>Every price is published</h3><p>You approve the number before anything starts, and nothing renews without you.</p></div>
-  <div><h3>We never send on your behalf</h3><p>Campaigns go out from software you already pay for, so the messaging rules stay where they belong.</p></div>
-  <div><h3>We tell you when it breaks</h3><p>Tracking fails quietly. We watch for that and tell you before you notice.</p></div>
-</section>
-
-<section class="band"><div class="wrap">
-  <h2>Start with the scorecard</h2>
-  <p>Two pages, up to ten findings, each with a check you can run yourself. Read it, test it, and decide from there. Every account stays in your name.</p>
-  <div class="row"><a class="btn" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard</a><a class="btn alt" href="https://cal.com/t10xck/vpw-consult">Book a free consultation</a></div>
 </div></section>
-<script>
-(function(){
-  var $=function(i){return document.getElementById(i)};
-  var JOBS=[["Water heater replacement","Plumbing",1840],["AC replacement","Heating and air",7200],["Tile roof repair","Roofing",1900],["Front yard turf","Turf",6000],["Panel upgrade","Electrical",3200],["Sprinkler repair","Landscaping",380],["Pump replacement","Pool service",1350],["Hardwood floors","Flooring",7400],["Slab leak repair","Plumbing",2400],["Furnace repair","Heating and air",480],["Leak inspection","Roofing",350],["Car charger install","Electrical",1500]];
-  var CITIES=["Tustin","Irvine","Anaheim","Orange","Costa Mesa","Mission Viejo","Lake Forest","Huntington Beach"];
-  var SRC={ads:["Google Ads","--ads"],maps:["Maps listing","--maps"],ref:["Referral","--ref"],dir:["Direct","--dir"]};
-  var ORDER=["ads","maps","ref","ads","dir","maps","ads","ref","maps","ads","ref","dir"];
-  var BLANK_CAP=8,TRACED_GOAL=12,GAP_OFF=1500,GAP_ON=950;
-  var calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var on=false,paused=false,timer=null,tix=[],prev={};
-  function money(n){return "$"+Math.round(n).toLocaleString("en-US")}
-  function pad(n){n=Math.round(n);return (n<10?"0":"")+n}
-  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
-  function count(e,from,to,fmt){
-    if(calm||from===to){e.textContent=fmt(to);return}
-    var t0=performance.now();
-    (function f(t){var k=Math.min(1,(t-t0)/500);k=1-Math.pow(1-k,3);e.textContent=fmt(from+(to-from)*k);if(k<1)requestAnimationFrame(f)})(t0);
-  }
-  function dial(id,to,fmt){var e=$(id),from=e._v||0;e._v=to;count(e,from,to,fmt)}
-  function traced(){return tix.filter(function(t){return t.rec})}
-  function blank(){return tix.filter(function(t){return !t.rec})}
-  function ticket(t,anim){
-    var k=el("div","tk"+(anim?" print":"")),no=el("div","no");
-    no.append(el("span",null,"Lead "+pad(t.i+1)),el("span",null,"Example"));
-    var where=el("div");where.append(t.trade+" · "+t.city+" · ",el("span","amt",money(t.price)+" quote"));
-    var src=el("div","src");src.append(el("span",null,"Source"),el("span","st"+(t.rec?"":" no-src"),t.rec?SRC[t.src][0]:"Not recorded"));
-    k.append(no,el("div","job",t.job),where,src);return k;
-  }
-  function bins(newest){
-    var b=$("bins");b.textContent="";
-    var groups=[["lost","Source unknown",blank(),"--lost"]];
-    Object.keys(SRC).forEach(function(s){groups.push([s,SRC[s][0],traced().filter(function(t){return t.src===s}),SRC[s][1]])});
-    groups.forEach(function(g){
-      var bin=el("div","bin"+(g[0]==="lost"?" lost":"")),st=el("div","stack");
-      g[2].forEach(function(t){var c=el("span","chip"+(t===newest?" new":""));c.style.setProperty("--c","var("+g[3]+")");st.append(c)});
-      var sum=el("div","sum"),big=el("b"),tot=g[0]==="lost"?g[2].length:g[2].reduce(function(a,t){return a+t.price},0);
-      count(big,prev[g[0]]||0,tot,g[0]==="lost"?function(n){n=Math.round(n);return n+(n===1?" lead":" leads")}:money);prev[g[0]]=tot;
-      sum.append(big,g[0]==="lost"?(g[2].length===1?"nothing says what brought it":"nothing says what brought them"):g[2].length+(g[2].length===1?" lead":" leads"));
-      bin.append(el("h3",null,g[1]),st,sum);b.append(bin);
-    });
-  }
-  function dials(){
-    dial("d-leads",tix.length,pad);dial("d-known",traced().length,pad);dial("d-lost",blank().length,pad);
-    dial("d-quoted",tix.reduce(function(a,t){return a+t.price},0),money);
-  }
-  function mood(){
-    var lost=blank().length,now=$("now"),waiting=!on&&lost>=BLANK_CAP;
-    document.body.dataset.rec=on?"on":"off";
-    $("rec").setAttribute("aria-checked",on);$("knob").textContent=on?"On":"Off";
-    $("flip").textContent=on?"can tell you exactly why":"couldn’t tell you why";
-    $("lost-l").textContent=on?"Source unknown, no longer growing":"Source unknown";
-    $("led-t").textContent=on?"Recording is on. Each lead arrives with its source":"Recording is off";
-    now.textContent="";
-    now.append(on?"Each lead now shows what brought it in":waiting?lost+" leads in, and nothing shows which marketing is working":"These leads are arriving with no source",
-      el("small",null,on?(lost?lost+" arrived before recording started, so nothing can say where they came from.":"Recording from the first lead, so every one can be traced."):waiting?"Turn recording on to see what changes.":"This is how most websites work. Turn recording on to see the difference."));
-    $("rec").classList.toggle("nudge",waiting);
-  }
-  function finish(){
-    var tot={},best=null,lost=blank().length;
-    traced().forEach(function(t){tot[t.src]=(tot[t.src]||0)+t.price});
-    Object.keys(tot).forEach(function(s){if(!best||tot[s]>tot[best])best=s});
-    $("end-h").textContent="Now a good month comes with a reason";
-    $("end-p").textContent="Every lead shows what brought it in. You know what to keep paying for, and what to stop.";
-    $("end").hidden=false;$("pause").disabled=true;
-  }
-  function done(){return on?traced().length>=TRACED_GOAL:blank().length>=BLANK_CAP}
-  function step(anim){
-    var i=tix.length,j=JOBS[i%JOBS.length],t={i:i,job:j[0],trade:j[1],price:j[2],city:CITIES[i%CITIES.length],src:ORDER[traced().length%ORDER.length],rec:on};
-    tix.push(t);var f=$("feed");f.textContent="";f.append(ticket(t,anim));
-    bins(anim?t:null);dials();mood();
-    if(on&&traced().length>=TRACED_GOAL)finish();
-  }
-  function loop(){clearTimeout(timer);if(paused||done())return;timer=setTimeout(function(){step(true);loop()},on?GAP_ON:GAP_OFF)}
-  function fill(){while(!done())step(false)}
-  function reset(){
-    clearTimeout(timer);tix=[];prev={};on=false;paused=false;$("pause").textContent="Pause";$("pause").disabled=false;$("end").hidden=true;
-    ["d-leads","d-known","d-lost","d-quoted"].forEach(function(id){$(id)._v=0});
-    $("feed").textContent="";bins();dials();mood();
-    if(calm)fill();else{step(true);loop()}
-  }
-  var touched=false,auto=false;
-  $("rec").onclick=function(){
-    if(!auto)touched=true;
-    on=!on;$("end").hidden=true;$("pause").disabled=false;
-    if(on&&traced().length>=TRACED_GOAL){tix=blank();tix.forEach(function(t,i){t.i=i});prev={}}
-    if(calm){fill();mood();return}
-    if(paused){paused=false;$("pause").textContent="Pause"}
-    if(done()){mood();bins();dials();return}
-    step(true);loop();
-  };
-  $("pause").onclick=function(){paused=!paused;this.textContent=paused?"Play":"Pause";loop()};
-  $("again").onclick=$("again2").onclick=reset;
-  reset();
-  setTimeout(function(){if(!touched&&!on){auto=true;$("rec").click();auto=false}},5000);
-})();
-</script>
-</main>
-<footer><div class="wrap foot">
-  <div><a class="brand" href="/"><i aria-hidden="true"></i>Vantage Point</a><p>Websites that record where your jobs came from. Orange County, CA.</p></div>
-  <nav aria-label="Trades"><b>Built for</b><a href="/websites-for/plumbers">Plumbers</a><a href="/websites-for/hvac">Heating and air</a><a href="/websites-for/electricians">Electricians</a><a href="/websites-for/roofers">Roofers</a><a href="/websites-for/landscapers">Landscapers</a><a href="/websites-for/flooring">Flooring</a><a href="/websites-for/pool-service">Pool service</a><a href="/websites-for/artificial-turf">Artificial turf</a><a href="/websites-for/salons">Salons</a><a href="/websites-for/restaurants">Restaurants</a></nav>
-  <nav aria-label="Company"><b>Company</b><a href="/samples">Sample sites</a><a href="/about">About</a><a href="/pricing">Pricing</a><a href="/compare">Compare</a><a href="/monthly">How the month runs</a><a href="mailto:info@vantagepointwebdesign.us">info@vantagepointwebdesign.us</a></nav>
-  <nav aria-label="Legal"><b>Legal</b><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/data-processing">Data processing</a></nav>
-</div></footer>
-<!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:18px 28px;background:rgba(10,15,35,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-  <p style="margin:0;font-size:14px;color:#A6AECB;max-width:680px;line-height:1.5">We use cookies to improve your experience and analyze site usage. By clicking "Accept All," you consent to our use of analytics and marketing cookies. See our <a href="/privacy" style="color:#5B86FF">Privacy Policy</a> for details.</p>
-  <div style="display:flex;gap:10px;flex-shrink:0">
-    <button id="cookie-reject" style="padding:10px 18px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,.2);color:#A6AECB;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">Essential Only</button>
-    <button id="cookie-accept" style="padding:10px 18px;border-radius:8px;background:linear-gradient(140deg,#3D6EFF,#5B86FF);border:none;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Accept All</button>
+
+<section id="how"><div class="wrap">
+  <p class="mono">01 / The problem</p>
+  <p class="big" data-scrub style="margin-top:20px">Calls come in. Forms get filled. Jobs get booked. Ask where any one of them came from and the honest answer is a shrug. That shrug is where your marketing money goes to hide.</p>
+</div></section>
+
+<section id="scorecard"><div class="wrap sc">
+  <div data-in>
+    <p class="mono">02 / Start here, free</p>
+    <h2>A scorecard you can <span class="lime">check yourself.</span></h2>
+    <p class="lead-in">Before any call, we look at your business the way a customer would and write down what we find. Two pages, up to ten findings, each with a check you can run in a minute or two.</p>
+    <ul class="checks"><li>Public information only. No logins and no export.</li><li>Every finding can be checked without taking our word for it.</li><li>Yours to keep, whether or not we ever work together.</li></ul>
+    <a class="btn" data-magnet=".2" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&amp;body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard →</a>
   </div>
+  <div class="spot" data-spot data-in>
+    <p class="mono" style="display:flex;justify-content:space-between;margin:0 0 8px"><span>Initial scorecard</span><span>Page 1 of 2</span></p>
+    <div class="fd"><p>Your Google listing and your website show different hours.</p><small>Check it: search your business name and compare the two.</small></div>
+    <div class="fd"><p>A quote request sent from a phone gets no confirmation.</p><small>Check it: send one to yourself and see what arrives.</small></div>
+    <div class="fd"><p>A call from an ad and a call from a referral look the same in your records.</p><small>Check it: ask how your last five callers found you.</small></div>
+    <p class="mono" style="margin:14px 0 0">Example findings. Yours come from your own business.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="mono">03 / The work</p><h2 style="margin-bottom:56px">Three things, <span class="lime">in this order.</span></h2>
+  <div class="stack">
+    <div class="card"><div class="n">01</div><div><span class="pill">Most start here</span><h3>Audit</h3><p>Send one export. We tell you who has gone quiet, which quotes were never followed up, who sends you referrals, and what is duplicated or blank.</p></div></div>
+    <div class="card"><div class="n">02</div><div><h3>Update</h3><p>Most sites were never built to record where a customer came from. We fix the forms, the phone and the booking so every lead arrives with its origin attached.</p></div></div>
+    <div class="card"><div class="n">03</div><div><h3>Maintain</h3><p>Nothing stays accurate on its own. We keep the tracking working and hand you three decisions a month, each with a dollar figure next to it.</p></div></div>
+  </div>
+</div></section>
+
+<section id="samples"><div class="wrap">
+  <p class="mono">04 / Sample sites</p><h2>Six samples. <span class="lime">Click through.</span></h2>
+  <p style="color:#3c352d;max-width:56ch;margin-top:18px">Send the form on any of them and see how a request arrives with its source attached. Names, numbers and prices are placeholders.</p>
+  <div class="rail">
+    <a class="spot" data-spot data-in href="demos/plumber.html"><img loading="lazy" src="assets/demos/plumber.webp" alt="Plumber sample site"><div class="meta"><h3>Plumber</h3><span class="mono">01</span></div><p>Pick what is happening, get three steps, then call.</p></a>
+    <a class="spot" data-spot data-in href="demos/hvac.html"><img loading="lazy" src="assets/demos/hvac.webp" alt="Heating and air sample site"><div class="meta"><h3>Heating and air</h3><span class="mono">02</span></div><p>A thermostat dial that fills in the visit request.</p></a>
+    <a class="spot" data-spot data-in href="demos/auto-repair.html"><img loading="lazy" src="assets/demos/auto-repair.webp" alt="Auto repair sample site"><div class="meta"><h3>Auto repair</h3><span class="mono">03</span></div><p>Findings sorted Now, Soon or Watch.</p></a>
+    <a class="spot" data-spot data-in href="demos/landscaper.html"><img loading="lazy" src="assets/demos/landscaper.webp" alt="Landscaper sample site"><div class="meta"><h3>Landscaper</h3><span class="mono">04</span></div><p>Drawn before it is built.</p></a>
+    <a class="spot" data-spot data-in href="demos/hair-salon.html"><img loading="lazy" src="assets/demos/hair-salon.webp" alt="Salon sample site"><div class="meta"><h3>Salon</h3><span class="mono">05</span></div><p>Color planned before it is mixed.</p></a>
+    <a class="spot" data-spot data-in href="demos/restaurant.html"><img loading="lazy" src="assets/demos/restaurant.webp" alt="Restaurant sample site"><div class="meta"><h3>Restaurant</h3><span class="mono">06</span></div><p>A candlelit menu and a table form.</p></a>
+  </div>
+</div></section>
+
+<section id="promises"><div class="wrap">
+  <p class="mono">05 / The terms</p><h2>Yours. <span class="lime">Not ours.</span></h2>
+  <div class="prom">
+    <div data-in><span class="k">A</span><h3>You own every account</h3><p>Your site, your customer system, your ad accounts, your domain. All in your name, with us as a user you can remove any time.</p></div>
+    <div data-in><span class="k">B</span><h3>Every price is published</h3><p>You approve the number before anything starts, and nothing renews without you.</p></div>
+    <div data-in><span class="k">C</span><h3>We never send on your behalf</h3><p>Campaigns go out from software you already pay for.</p></div>
+    <div data-in><span class="k">D</span><h3>We tell you when it breaks</h3><p>Tracking fails quietly. We watch for that and tell you before you notice.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="mono">06 / Prices</p><h2>Published, <span class="lime">on purpose.</span></h2>
+  <div class="prices" id="prices">
+    <div class="spot" data-spot data-in><span class="tier">AUDIT</span><h3>Data audit</h3><div class="amt">$1,500 to $3,000</div><div class="per">one time · one export, no logins</div><ul><li>Who has gone quiet at 12, 18 and 24 months</li><li>Quotes sent, never followed up, and their value</li><li>Who is actually sending you referrals</li></ul><a class="btn" href="#scorecard">Start with a scorecard</a></div>
+    <div class="spot" data-spot data-in><span class="tier">UPDATE</span><h3>Website rebuild</h3><div class="amt">from $1,500</div><div class="per">one time, priced on site size</div><ul><li>Source carried from the ad to the form</li><li>Your phone number tracked, not guessed at</li><li>Booking and quote requests that log a source</li></ul><a class="btn ghost" href="https://cal.com/t10xck/vpw-consult">Talk it through</a></div>
+    <div class="spot" data-spot data-in><span class="tier">MAINTAIN</span><h3>Keep it connected</h3><div class="amt">$799 to $1,500</div><div class="per">per month · cancel any time</div><ul><li>We maintain the tracking so it keeps working</li><li>Three decisions a month, each with a dollar figure</li><li>Campaigns go out from software you already pay for</li></ul><a class="btn ghost" href="monthly.html">How the month runs</a></div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><p class="mono">07 / Built for you</p><h2>Pick your business.</h2><div class="trades"><a href="websites-for/plumbers.html">Plumbers</a><a href="websites-for/hvac.html">Heating and air</a><a href="websites-for/electricians.html">Electricians</a><a href="websites-for/roofers.html">Roofers</a><a href="websites-for/landscapers.html">Landscapers</a><a href="websites-for/flooring.html">Flooring</a><a href="websites-for/pool-service.html">Pool service</a><a href="websites-for/artificial-turf.html">Artificial turf</a><a href="websites-for/salons.html">Salons</a><a href="websites-for/restaurants.html">Restaurants</a></div></div></section>
+<section class="final"><div class="wrap">
+  <h2>Start with the <span class="lime">scorecard.</span></h2>
+  <p>Two pages, up to ten findings, each with a check you can run yourself. Read it, test it, and decide from there.</p>
+  <div class="ctas"><a class="btn" data-magnet=".25" href="mailto:info@vantagepointwebdesign.us?subject=Scorecard%20Request&amp;body=Website%20address%3A%0D%0ABusiness%20name%3A%0D%0ACity%3A">Get your scorecard →</a><a class="btn ghost" href="https://cal.com/t10xck/vpw-consult">Book a free consultation</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><div><a class="brand" href="index.html"><i aria-hidden="true"></i>Vantage Point</a><p>Websites that record where your jobs came from. Orange County, CA.</p><p><a href="mailto:info@vantagepointwebdesign.us">info@vantagepointwebdesign.us</a></p></div><div><b>Built for</b><a href="websites-for/plumbers.html">Plumbers</a><a href="websites-for/hvac.html">Heating and air</a><a href="websites-for/electricians.html">Electricians</a><a href="websites-for/roofers.html">Roofers</a><a href="websites-for/landscapers.html">Landscapers</a><a href="websites-for/flooring.html">Flooring</a><a href="websites-for/pool-service.html">Pool service</a><a href="websites-for/artificial-turf.html">Artificial turf</a><a href="websites-for/salons.html">Salons</a><a href="websites-for/restaurants.html">Restaurants</a></div><div><b>Services</b><a href="services/website-design.html">Website design</a><a href="services/local-seo.html">Local SEO</a><a href="services/online-booking.html">Online booking</a><a href="services/google-business-profile.html">Google Business Profile</a></div><div><b>Company</b><a href="samples.html">Sample sites</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="compare.html">Compare</a><a href="monthly.html">How the month runs</a></div><div><b>Legal</b><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-processing.html">Data processing</a></div></div></footer>
+<div id="cookie-banner" class="cookie" hidden>
+  <p>We use cookies to improve your experience and analyze site usage. By clicking "Accept All," you consent to our use of analytics and marketing cookies. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+  <div><button id="cookie-reject" class="btn alt">Essential Only</button><button id="cookie-accept" class="btn">Accept All</button></div>
 </div>
 <script>
 (function(){
-  var banner = document.getElementById('cookie-banner');
-  if (!localStorage.getItem('vpw_cookie_consent')) banner.style.display = 'flex';
-  document.getElementById('cookie-accept').addEventListener('click', function(){ localStorage.setItem('vpw_cookie_consent','all'); banner.style.display='none'; });
-  document.getElementById('cookie-reject').addEventListener('click', function(){ localStorage.setItem('vpw_cookie_consent','essential'); banner.style.display='none'; });
+  var b=document.getElementById('cookie-banner'),get=function(){try{return localStorage.getItem('vpw_cookie_consent')}catch(e){return 'x'}};
+  if(!get())b.hidden=false;
+  document.getElementById('cookie-accept').addEventListener('click',function(){try{localStorage.setItem('vpw_cookie_consent','all')}catch(e){}b.hidden=true});
+  document.getElementById('cookie-reject').addEventListener('click',function(){try{localStorage.setItem('vpw_cookie_consent','essential')}catch(e){}b.hidden=true});
 })();
 </script>
-<!-- Google Analytics -->
+<!-- Google Analytics (Consent Mode v2, unchanged from the live site) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3XWVL1Q3Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  // Consent Mode v2: nothing is stored until the banner's "Accept All" is clicked.
-  // "Essential Only" used to hide the banner and leave analytics running anyway.
   var vpwConsent = (function(){ try { return localStorage.getItem('vpw_cookie_consent'); } catch(e){ return null; } })();
   var vpwGranted = vpwConsent === 'all' ? 'granted' : 'denied';
   gtag('consent', 'default', {analytics_storage: vpwGranted, ad_storage: vpwGranted, ad_user_data: vpwGranted, ad_personalization: vpwGranted});
@@ -255,54 +117,25 @@
     gtag('consent', 'update', {analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted'});
   });
 </script>
-<script src="/js/track.js" defer></script>
-<script>(function(){
-var d=document,root=d.documentElement,calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
-root.classList.add("js");
-/* sticky bar shadow */
-var bar=d.querySelector(".topbar");
-if(bar){var f=function(){bar.classList.toggle("stuck",scrollY>8)};addEventListener("scroll",f,{passive:true});f()}
-/* reveal on scroll */
-var io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15}):null;
-d.querySelectorAll(".blk .cards>.card,.blk li,.blk .faq>div,.blk table").forEach(function(el,i){
-  if(el.tagName==="TABLE"){el.classList.add("cmp");el.querySelectorAll("tbody tr").forEach(function(r,n){r.style.setProperty("--r",n)})}
-  else{el.classList.add("rv");el.style.setProperty("--d",(i%4)*.08+"s")}
-  if(io)io.observe(el);else el.classList.add("in");
-});
-/* audit: an export being read, findings appear as the beam passes */
-var chips=d.querySelector(".as-chips");
-if(chips){
-  var labels=["Gone quiet","Quotes that died","What leads to what","Who sends referrals","When people buy","Where work clusters","Never asked for a review","Blank sources"];
-  labels.forEach(function(t){var li=d.createElement("li");li.textContent=t;chips.appendChild(li)});
-  var lis=chips.children,n=0;
-  function round(){[].forEach.call(lis,function(l){l.classList.remove("on")});n=0;(function nx(){if(n<lis.length){lis[n++].classList.add("on");setTimeout(nx,calm?0:700)}})()}
-  round();if(!calm)setInterval(round,6400);
-}
-/* how it works: rotate the four, then fan them out */
-var st=d.querySelector(".fv-stage");
-if(st){
-  var cards=[].slice.call(st.children),cap=d.querySelector(".fv-cap"),k=0;
-  var caps=["Paid ads: the sponsored results.","Your maps listing.","The local services listing.","Someone typing your name in.","Four different things, one word on the form: “Google.”"];
-  function lay(s){
-    var w=st.clientWidth,cw=cards[0].offsetWidth,ch=cards[0].offsetHeight,gap=14,narrow=w<cw*4+gap*5;
-    cards.forEach(function(c,i){
-      var x=0,y=0,sc=1,o=1,r=0,z=1;
-      if(s<4){
-        if(i===s){z=5}else if(i<s){x=-60;sc=.9;o=0}else{y=18;sc=.92;o=0}
-      }else if(narrow){
-        x=(i%2-.5)*(cw+gap);y=(Math.floor(i/2))*(ch*.5+gap/2)-ch*.12;sc=.78;z=i+1;
-      }else{x=(i-1.5)*(cw+gap);r=(i-1.5)*2.5;sc=.94;z=i+1}
-      c.style.transform="translate("+x+"px,"+y+"px) scale("+sc+") rotate("+r+"deg)";c.style.opacity=o;c.style.zIndex=z;
-    });
-    cap.textContent=caps[s];
-  }
-  if(narrow2()){st.style.height="330px"}
-  function narrow2(){return st.clientWidth<cards[0].offsetWidth*4+70}
-  function tick(){lay(k);var hold=k===4?4200:1700;k=(k+1)%5;setTimeout(tick,hold)}
-  if(calm){lay(4)}else{lay(0);k=1;setTimeout(tick,1700)}
-  addEventListener("resize",function(){st.style.height=narrow2()&&(k===0||k===5||true)?"":"";lay((k+4)%5)});
-}
+<script src="/js/track.js"></script>
+<script src="assets/fx.js"></script>
+
+<script>
+(function(){
+  const L=[['Water heater','Tustin · $1,840','Google Ads'],['Cake order','40 guests · $380','Instagram'],['Brake job','2017 Civic · $610','Google Maps'],['Kitchen remodel','quote · $14,200','Referral'],['Color and cut','$165','Website form'],['Dinner for 8','Friday · $420','Yelp']];
+  const list=document.getElementById('list'),sw=document.getElementById('sw'),tb=document.getElementById('tb'),tg=document.getElementById('tg');
+  let on=false,i=0,b=0,g=0;
+  function add(){const [w,s,src]=L[i++%L.length];const d=document.createElement('div');d.className='lead'+(on?' ok':'');d.dataset.src=src;
+    d.innerHTML=`<span class="dot"></span><span class="who">${w}<small>${s}</small></span><span class="src">${on?src:'unknown'}</span>`;
+    list.prepend(d);while(list.children.length>4)list.lastChild.remove();on?tg.textContent=++g:tb.textContent=++b;}
+  sw.onclick=()=>{on=!on;sw.setAttribute('aria-checked',on);if(on)[...list.children].forEach((d,k)=>setTimeout(()=>{d.classList.add('ok');d.querySelector('.src').textContent=d.dataset.src},k*120));add();};
+  for(let k=0;k<3;k++)add();
+  if(!fxRM)setInterval(add,2200);
+  setTimeout(()=>{if(!on&&!fxRM)sw.animate([{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:600,iterations:3})},3500);
 })();
 </script>
-</body>
-</html>
+<script>
+(function(){const r=document.getElementById('rot'),w=JSON.parse(r.dataset.words);let i=0;const s=r.firstElementChild;
+const fit=()=>{const m=document.createElement('span');m.style.cssText='position:absolute;visibility:hidden;white-space:nowrap';m.textContent=s.textContent;r.append(m);r.style.width=(m.offsetWidth+26)+'px';m.remove()};fit();
+if(fxRM)return;setInterval(()=>{r.classList.add('out');setTimeout(()=>{i=(i+1)%w.length;s.textContent=w[i];fit();r.classList.replace('out','in');setTimeout(()=>r.classList.remove('in'),40)},300)},2200);})();
+</script></body></html>
